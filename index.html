@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AzzProno - Dominez le classement Shuffle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AZZ<span>PRONO</span></div>
+            <ul class="nav-links">
+                <li><a href="#leaderboard">Classement</a></li>
+                <li><a href="#bonus">Bonus</a></li>
+                <li><a href="#rewards">Récompenses</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#" class="btn-primary aff-link">Jouer sur Shuffle</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Devenez la légende de <span class="highlight">Shuffle</span></h1>
+                    <p>Rejoignez AzzProno, profitez de bonus exclusifs et grimpez dans le classement pour remporter des prix exceptionnels.</p>
+                    <div class="hero-btns">
+                        <a href="#" class="btn-primary aff-link">S'inscrire maintenant</a>
+                        <a href="#leaderboard" class="btn-secondary">Voir le classement</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Overview (Optional extra for visual) -->
+        <section class="quick-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value" id="total-wager">$0</span>
+                        <span class="stat-label">Wager Total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="total-users">0</span>
+                        <span class="stat-label">Affiliés Actifs</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Mise à jour Live</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="leaderboard-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Classement Live</h2>
+                    <p>Les meilleurs joueurs de la semaine</p>
+                </div>
+                <div class="leaderboard-container">
+                    <table id="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>Rang</th>
+                                <th>Joueur</th>
+                                <th>Wager Pondéré</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                            <!-- Injected by script.js -->
+                            <tr>
+                                <td colspan="4" class="loading">Chargement du classement...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bonus Section -->
+        <section id="bonus" class="bonus-section">
+            <div class="container">
+                <div class="bonus-card">
+                    <div class="bonus-content">
+                        <h2>Bonus Shuffle Exclusif</h2>
+                        <ul class="bonus-list">
+                            <li>✨ Rakeback immédiat</li>
+                            <li>🔥 Boost de mise</li>
+                            <li>💎 Accès aux compétitions privées</li>
+                        </ul>
+                        <a href="#" class="btn-primary aff-link">Récupérer mon bonus</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rewards Section -->
+        <section id="rewards" class="rewards-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Récompenses</h2>
+                    <p>Ce que vous pouvez gagner</p>
+                </div>
+                <div class="rewards-grid">
+                    <div class="reward-item">
+                        <div class="reward-icon">🥇</div>
+                        <h3>1er Place</h3>
+                        <p>Cash Prize & Bonus VIP</p>
+                    </div>
+                    <div class="reward-item">
+                        <div class="reward-icon">🥈</div>
+                        <h3>Top 5</h3>
+                        <p>Partage de la cagnotte</p>
+                    </div>
+                    <div class="reward-item">
+                        <div class="reward-icon">🥉</div>
+                        <h3>Top 10</h3>
+                        <p>Free Bets & Goodies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial Section -->
+        <section id="tutorial" class="tutorial-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Comment participer ?</h2>
+                </div>
+                <div class="steps-grid">
+                    <div class="step">
+                        <span class="step-num">01</span>
+                        <h3>Inscription</h3>
+                        <p>Créez un compte via notre lien d'affiliation exclusif.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">02</span>
+                        <h3>Jouez</h3>
+                        <p>Misez sur vos jeux préférés (Casino, Sports, eSports).</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">03</span>
+                        <h3>Gagnez</h3>
+                        <p>Montez dans le classement et encaissez vos gains.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Questions Fréquentes</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Comment est calculé le classement ?</h3>
+                        <p>Le classement est basé sur votre montant total de mise (Wager) sur Shuffle.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Quand sont distribués les prix ?</h3>
+                        <p>Les prix sont crédités automatiquement à la fin de chaque période de compétition.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Mes données sont-elles protégées ?</h3>
+                        <p>Oui, nous masquons automatiquement les pseudonymes pour garantir votre anonymat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Actualités</h2>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-date">Aujourd'hui</div>
+                        <h3>Lancement de la Saison 1</h3>
+                        <p>Préparez-vous pour des récompenses doublées cette semaine !</p>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-date">Hier</div>
+                        <h3>Nouveaux jeux disponibles</h3>
+                        <p>Shuffle vient d'ajouter 10 nouveaux slots originaux.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="community-section">
+            <div class="container">
+                <div class="community-box">
+                    <h2>Rejoignez la Communauté</h2>
+                    <p>Échangez avec d'autres joueurs et ne ratez aucune annonce sur Telegram.</p>
+                    <a href="#" class="btn-telegram telegram-link">Rejoindre le Telegram</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">AZZ<span>PRONO</span></div>
+                <p>&copy; 2024 AzzProno. Tous droits réservés.</p>
+                <div class="legal">
+                    <p>Le montant de la mise est calculé uniquement pour les paris finalisés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
