@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Definitive fix: point to the Node server explicitly
-    const API_BASE = 'http://localhost:3000';
+    // Auto-détection de l'adresse du serveur (Local vs Production)
+    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? 'http://localhost:3000' 
+        : '';
 
     // State
     let config = {
