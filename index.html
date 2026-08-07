@@ -10,6 +10,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Banderole Animée -->
+    <div class="scrolling-banner">
+        <div class="banner-content">
+            <span class="banner-item">⭐ 30 € OFFERTS</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">Bonus +200 %</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">Code AZZPRONOS</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">2 000 € à partager entre le Top 10</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">Classement en direct</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">Rejoins Telegram</span>
+            <span class="banner-item">•</span>
+            <!-- Repeat for seamless loop -->
+            <span class="banner-item">⭐ 30 € OFFERTS</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">Bonus +200 %</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">Code AZZPRONOS</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">2 000 € à partager entre le Top 10</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">Classement en direct</span>
+            <span class="banner-item">•</span>
+            <span class="banner-item">Rejoins Telegram</span>
+        </div>
+    </div>
+
+    <!-- Bandeau d'information discret -->
+    <div class="info-bandeau">
+        🔥 <strong>Bonus +200 %</strong> disponible avec le code <strong>AZZPRONOS</strong> • ⚡ Les 10 meilleurs joueurs se partagent <strong>2 000 €</strong> chaque mois.
+    </div>
+
     <!-- Background Immersif -->
     <div class="casino-bg">
         <div class="aurora glow-1"></div>
@@ -52,10 +87,20 @@
 
     <main>
         <!-- Hero Spectaculaire -->
-        <section class="hero-v2">
+        <section class="hero-v2" style="position: relative;">
+            <div class="m-sticker" style="top: 10%; right: 5%;">🔥 Bonus exclusif</div>
+            <div class="m-sticker" style="bottom: 20%; left: 2%;">⚡ Offre limitée</div>
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-text-content">
+                        <div class="hero-badges">
+                            <span class="m-badge">✅ Inscription automatique</span>
+                            <span class="m-badge">🔥 Bonus exclusif</span>
+                            <span class="m-badge">⚡ Classement en direct</span>
+                            <span class="m-badge">🎁 Récompenses mensuelles</span>
+                            <span class="m-badge">🟢 Communauté active</span>
+                            <span class="m-badge">🏆 Top 10 récompensé</span>
+                        </div>
                         <div class="badge-live">
                             <span class="live-indicator"></span> 2 000 € À GAGNER CE MOIS-CI
                         </div>
@@ -122,8 +167,32 @@
             </div>
         </section>
 
+        <!-- Encart Promotionnel Premium -->
+        <section class="promo-box-section">
+            <div class="container">
+                <div class="promo-container">
+                    <div class="promo-info">
+                        <h2>🎁 30 € OFFERTS</h2>
+                        <ul class="promo-features">
+                            <li>Bonus de bienvenue +200 %</li>
+                            <li>Utilise le code <strong>AZZPRONOS</strong></li>
+                            <li>Accès au classement VIP</li>
+                        </ul>
+                        <div class="mini-copy-box">
+                            <span class="mini-code">AZZPRONOS</span>
+                            <button class="btn-copy-mini" onclick="copyCode()">COPIER</button>
+                        </div>
+                    </div>
+                    <div class="promo-action">
+                        <a href="#" class="btn-promo-large aff-link">Profiter de l'offre</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section Bonus Prominente -->
-        <section id="bonus" class="bonus-section-v2">
+        <section id="bonus" class="bonus-section-v2" style="position: relative;">
+            <div class="m-sticker" style="top: 5%; left: 10%;">🎁 30 € OFFERTS</div>
             <div class="container">
                 <div class="section-title center">
                     <span class="pre-title">AVANTAGES EXCLUSIFS</span>
@@ -186,7 +255,8 @@
         </section>
 
         <!-- Récompenses -->
-        <section id="rewards" class="rewards-section-v2">
+        <section id="rewards" class="rewards-section-v2" style="position: relative;">
+            <div class="m-sticker" style="top: 10%; right: 10%;">🏆 2 000 € à partager</div>
             <div class="container">
                 <div class="rewards-wrapper">
                     <div class="reward-box rank-1">
@@ -275,6 +345,7 @@
                         <a href="#" class="social-btn tk">TIKTOK</a>
                         <a href="#" class="social-btn ig">INSTAGRAM</a>
                     </div>
+                    <a href="#" class="btn-cta-pulse telegram-link">🚀 PROFITER DU BONUS</a>
                 </div>
             </div>
         </section>

@@ -398,32 +398,259 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .rank-cell { font-weight: 900; font-size: 1.2rem; }
 .wager-amount { color: var(--neon-violet); font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; }
 
+/* --- Nouveaux éléments Marketing & UX --- */
+
+/* Scrolling Banner */
+.scrolling-banner {
+    background: linear-gradient(90deg, var(--neon-violet), var(--neon-blue));
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1000;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+.banner-item {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+/* Information Bandeau */
+.info-bandeau {
+    background: rgba(124, 58, 237, 0.1);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 8px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+
+.info-bandeau strong {
+    color: var(--neon-pink);
+}
+
+/* Marketing Badges */
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.m-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.m-badge:hover {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: var(--neon-violet);
+    transform: translateY(-2px);
+}
+
+.m-badge i { font-style: normal; }
+
+/* Promotional Box */
+.promo-box-section {
+    padding: 60px 0;
+}
+
+.promo-container {
+    background: linear-gradient(135deg, rgba(20, 5, 50, 0.9), rgba(40, 10, 80, 0.9));
+    border: 2px solid var(--neon-violet);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px var(--neon-violet-glow);
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-container::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, var(--neon-violet-glow) 0%, transparent 70%);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.promo-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.promo-features {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.promo-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.promo-features li::before {
+    content: '✅';
+}
+
+.btn-promo-large {
+    background: linear-gradient(135deg, var(--neon-violet), var(--neon-blue));
+    color: white;
+    text-decoration: none;
+    padding: 18px 45px;
+    border-radius: 20px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px var(--neon-violet-glow);
+    transition: var(--transition);
+    display: inline-block;
+    animation: pulse-glow 2s infinite;
+}
+
+.btn-promo-large:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px var(--neon-violet-glow);
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 10px var(--neon-violet-glow); }
+    50% { box-shadow: 0 0 25px var(--neon-violet-glow); }
+    100% { box-shadow: 0 0 10px var(--neon-violet-glow); }
+}
+
+/* Marketing Stickers */
+.m-sticker {
+    position: absolute;
+    background: var(--neon-pink);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 0.8rem;
+    transform: rotate(-10deg);
+    box-shadow: 0 5px 15px rgba(217, 70, 239, 0.4);
+    pointer-events: none;
+    z-index: 10;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-10px) rotate(-5deg); }
+}
+
+/* Special CTA for Community */
+.btn-cta-pulse {
+    background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.btn-cta-pulse:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.6);
+}
+
+.btn-cta-pulse::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Dynamisme Global */
+.b-card:hover {
+    box-shadow: 0 0 30px var(--neon-violet-glow);
+}
+
+.social-btn:hover {
+    transform: scale(1.05);
+}
+
+.reward-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
 /* Particles */
 .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: white;
     border-radius: 50%;
-    animation: floatParticle 10s infinite linear;
+    pointer-events: none;
+    z-index: -1;
 }
 
-@keyframes floatParticle {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+@keyframes float-particle {
+    0% { transform: translateY(0) translateX(0); }
+    33% { transform: translateY(-50px) translateX(20px); }
+    66% { transform: translateY(-20px) translateX(-30px); }
+    100% { transform: translateY(0) translateX(0); }
 }
 
-/* Reveal Animations */
+/* Animations au scroll */
 .reveal-element {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 .neon-spinner {

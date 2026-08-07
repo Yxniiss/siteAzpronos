@@ -111,27 +111,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // Particle Simulation (Casino chips/stars)
     function initParticles() {
         const container = document.getElementById('particles');
-        for (let i = 0; i < 15; i++) {
+        if (!container) return;
+        
+        const count = 25;
+        for (let i = 0; i < count; i++) {
             const p = document.createElement('div');
             p.className = 'particle';
+            const size = Math.random() * 5 + 2;
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
             p.style.left = Math.random() * 100 + '%';
             p.style.top = Math.random() * 100 + '%';
-            p.style.animationDelay = Math.random() * 5 + 's';
-            p.style.opacity = Math.random() * 0.3;
+            p.style.animation = `float-particle ${Math.random() * 10 + 10}s linear infinite`;
+            p.style.animationDelay = `-${Math.random() * 20}s`;
+            p.style.opacity = Math.random() * 0.4;
+            p.style.background = i % 2 === 0 ? 'var(--neon-violet)' : 'var(--neon-blue)';
+            p.style.boxShadow = `0 0 10px ${i % 2 === 0 ? 'var(--neon-violet)' : 'var(--neon-blue)'}`;
             container.appendChild(p);
         }
     }
 
-    // Online counter simulation
-    setInterval(() => {
-        const change = Math.floor(Math.random() * 3) - 1;
-        CONFIG.onlinePlayers = Math.max(30, CONFIG.onlinePlayers + change);
-        const el = document.getElementById('online-count');
-        if(el) el.textContent = CONFIG.onlinePlayers;
-    }, 5000);
+    // Scroll Observer for dynamism
+    function initScrollAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .b-card, .reward-box, .t-step, .promo-container').forEach(el => {
+            el.classList.add('reveal-element');
+            observer.observe(el);
+        });
+    }
 
     // Initial Load
     initParticles();
+    initScrollAnimations();
     fetchConfig();
     fetchStats();
     fetchLeaderboard();
