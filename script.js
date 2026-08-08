@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Copy to Clipboard
     window.copyCode = () => {
         navigator.clipboard.writeText(CONFIG.bonusCode).then(() => {
-            const btns = document.querySelectorAll('.btn-copy, .btn-copy-small');
+            const btns = document.querySelectorAll('.btn-copy, .btn-copy-small, .btn-copy-mini, .neon-code-card button');
             btns.forEach(b => {
                 const originalText = b.textContent;
-                b.textContent = 'COPIÉ !';
-                b.style.background = '#10b981';
-                b.style.color = 'white';
+                
+                b.textContent = '✓ COPIÉ !';
+                b.classList.add('copied');
+                
                 setTimeout(() => {
                     b.textContent = originalText;
-                    b.style.background = '';
-                    b.style.color = '';
+                    b.classList.remove('copied');
                 }, 2000);
             });
         });
@@ -59,18 +59,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch Leaderboard
     async function fetchLeaderboard() {
         const tbody = document.getElementById('leaderboard-body');
+        const podiumContainer = document.getElementById('leaderboard-podium');
         try {
             const res = await fetch(`${API_BASE}/api/leaderboard`);
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             const data = await res.json();
 
             if (!data || data.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="3" class="center">Aucun joueur ce mois-ci.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="4" class="center">Aucun joueur ce mois-ci.</td></tr>';
                 return;
             }
 
             const sorted = [...data].sort((a, b) => (parseFloat(b.weightedWager) || 0) - (parseFloat(a.weightedWager) || 0)).slice(0, 20);
 
+            // Update Podium (Top 3)
+            const top3 = sorted.slice(0, 3);
+            const podiumOrder = [1, 0, 2]; // 2nd, 1st, 3rd for visual podium
+            podiumContainer.innerHTML = podiumOrder.map(idx => {
+                const p = top3[idx];
+                if (!p) return '';
+                const rank = idx + 1;
+                const medals = ['🥇', '🥈', '🥉'];
+                return `
+                    <div class="podium-item p-${rank} reveal-element stagger-${rank}">
+                        <div class="podium-rank">${medals[idx]}</div>
+                        <div class="podium-player neon-pulse">
+                            <span class="p-name">${p.username}</span>
+                            <span class="p-wager">${formatCurrency(p.weightedWager)}</span>
+                        </div>
+                        <div class="podium-base">${rank}</div>
+                    </div>
+                `;
+            }).join('');
+
+            // Update Table
             tbody.innerHTML = sorted.map((p, i) => {
                 const rank = i + 1;
                 let rankDisplay = `#${rank}`;
@@ -78,23 +100,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (rank === 2) rankDisplay = '🥈';
                 if (rank === 3) rankDisplay = '🥉';
 
+                let reward = '-';
+                if (rank === 1) reward = '1 500 €';
+                else if (rank >= 2 && rank <= 5) reward = '250 €';
+                else if (rank >= 6 && rank <= 10) reward = '100 €';
+
                 return `
                     <tr class="reveal-element">
                         <td class="rank-cell"><span class="rank-badge r-${rank}">${rankDisplay}</span></td>
                         <td class="player-name">${p.username}</td>
                         <td class="align-right"><span class="wager-amount">${formatCurrency(p.weightedWager)}</span></td>
+                        <td class="align-right"><span class="neon-purple-text" style="font-weight: 900;">${reward}</span></td>
                     </tr>
                 `;
             }).join('');
 
-            // Trigger animations for new rows
+            // Trigger animations
             setTimeout(() => {
-                document.querySelectorAll('#leaderboard-body .reveal-element').forEach(el => el.classList.add('reveal-visible'));
+                document.querySelectorAll('.reveal-element').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('reveal-visible');
+                    }
+                });
             }, 100);
 
         } catch (err) {
             console.error('Leaderboard error:', err);
-            tbody.innerHTML = '<tr><td colspan="3" class="center">Erreur de chargement.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="4" class="center">Erreur de chargement.</td></tr>';
         }
     }
 
@@ -125,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
             p.style.animation = `float-particle ${Math.random() * 10 + 10}s linear infinite`;
             p.style.animationDelay = `-${Math.random() * 20}s`;
             p.style.opacity = Math.random() * 0.4;
-            p.style.background = i % 2 === 0 ? 'var(--neon-violet)' : 'var(--neon-blue)';
-            p.style.boxShadow = `0 0 10px ${i % 2 === 0 ? 'var(--neon-violet)' : 'var(--neon-blue)'}`;
+            p.style.background = i % 2 === 0 ? 'var(--neon-purple)' : 'var(--neon-green)';
+            p.style.boxShadow = `0 0 10px ${i % 2 === 0 ? 'var(--neon-purple)' : 'var(--neon-green)'}`;
             container.appendChild(p);
         }
     }
@@ -141,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('section, .b-card, .reward-box, .t-step, .promo-container').forEach(el => {
+        document.querySelectorAll('section, .b-card, .reward-box, .t-step, .promo-container, .stat-card, .spectacular-promo, .reveal-element').forEach(el => {
             el.classList.add('reveal-element');
             observer.observe(el);
         });
@@ -153,6 +185,12 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchConfig();
     fetchStats();
     fetchLeaderboard();
+
+    // Floating CTA Delay
+    setTimeout(() => {
+        const floatingCta = document.getElementById('floating-cta');
+        if (floatingCta) floatingCta.classList.add('visible');
+    }, 5000);
 
     // Auto Refresh
     setInterval(() => {
