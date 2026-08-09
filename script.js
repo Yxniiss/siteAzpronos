@@ -10,8 +10,46 @@ document.addEventListener('DOMContentLoaded', () => {
         onlinePlayers: 42
     };
 
+    let lastSuccessfulFetch = Date.now();
+
     // Helper: Format Currency
     const formatCurrency = (v) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(parseFloat(v) || 0);
+
+    // Dynamic Countdown Logic
+    function updateCountdown() {
+        const now = new Date();
+        // Fin du mois actuel
+        const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+        const diff = endOfMonth - now;
+
+        if (diff <= 0) {
+            document.getElementById('days').textContent = '00';
+            document.getElementById('hours').textContent = '00';
+            document.getElementById('mins').textContent = '00';
+            document.getElementById('secs').textContent = '00';
+            return;
+        }
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = d.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = h.toString().padStart(2, '0');
+        document.getElementById('mins').textContent = m.toString().padStart(2, '0');
+        document.getElementById('secs').textContent = s.toString().padStart(2, '0');
+    }
+
+    // Dynamic Last Update Logic
+    function updateLastUpdateTime() {
+        const now = Date.now();
+        const diffSeconds = Math.floor((now - lastSuccessfulFetch) / 1000);
+        const indicator = document.getElementById('live-indicator-text');
+        if (indicator) {
+            indicator.textContent = `En direct · actualisé il y a ${diffSeconds} secondes`;
+        }
+    }
 
     // Copy to Clipboard
     window.copyCode = () => {
@@ -39,6 +77,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await res.json();
             document.querySelectorAll('.aff-link').forEach(l => l.href = data.affiliateLink);
             document.querySelectorAll('.telegram-link').forEach(l => l.href = data.telegramLink);
+            
+            // Gestion dynamique des réseaux sociaux optionnels
+            const discordCard = document.getElementById('link-discord');
+            if (discordCard && data.discordLink) {
+                discordCard.href = data.discordLink;
+                discordCard.style.display = 'flex';
+            }
+            
+            const xCard = document.getElementById('link-x');
+            if (xCard && data.xLink) {
+                xCard.href = data.xLink;
+                xCard.style.display = 'flex';
+            }
         } catch (err) { console.error('Config error:', err); }
     }
 
@@ -50,8 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await res.json();
             if (Array.isArray(data)) {
                 const total = data.reduce((s, u) => s + (parseFloat(u.wagerAmount) || 0), 0);
-                document.getElementById('total-wager').textContent = formatCurrency(total);
-                document.getElementById('total-users').textContent = data.length + '+';
+                const totalWager = document.getElementById('total-wager');
+                const totalUsers = document.getElementById('total-users');
+                if (totalWager) totalWager.textContent = formatCurrency(total);
+                if (totalUsers) totalUsers.textContent = data.length + '+';
             }
         } catch (err) { console.error('Stats error:', err); }
     }
@@ -64,6 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(`${API_BASE}/api/leaderboard`);
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             const data = await res.json();
+            
+            lastSuccessfulFetch = Date.now();
+            if (document.getElementById('active-players-count')) {
+                document.getElementById('active-players-count').textContent = data.length || 0;
+            }
 
             if (!data || data.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="4" class="center">Aucun joueur ce mois-ci.</td></tr>';
@@ -126,7 +184,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (err) {
             console.error('Leaderboard error:', err);
-            tbody.innerHTML = '<tr><td colspan="4" class="center">Erreur de chargement.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="4" class="center">🔄 Données momentanément indisponibles</td></tr>';
+        }
+    }
+
+    // Fetch News
+    async function fetchNews() {
+        const container = document.getElementById('news-container');
+        if (!container) return;
+
+        try {
+            // Utilisation d'un service public pour convertir le flux RSS en JSON
+            const rssUrl = encodeURIComponent('https://dwh.lequipe.fr/api/edito/rss?path=/Football/');
+            const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`);
+            const data = await res.json();
+
+            if (data.status === 'ok') {
+                container.innerHTML = data.items.slice(0, 5).map(item => {
+                    const date = new Date(item.pubDate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+                    
+                    return `
+                        <a href="${item.link}" target="_blank" class="news-card-horizontal reveal-element">
+                            <div class="news-icon-wrapper">⚽</div>
+                            <div class="news-info">
+                                <span class="news-date-pill">${date}</span>
+                                <h3 class="news-title-compact">${item.title}</h3>
+                            </div>
+                            <div class="news-arrow">→</div>
+                        </a>
+                    `;
+                }).join('');
+
+                // Trigger animations for new items
+                setTimeout(() => {
+                    container.querySelectorAll('.reveal-element').forEach(el => el.classList.add('reveal-visible'));
+                }, 100);
+            }
+        } catch (err) {
+            console.error('News fetch error:', err);
+            container.innerHTML = '<p class="center" style="grid-column: 1/-1;">Impossible de charger les actualités pour le moment.</p>';
         }
     }
 
@@ -185,6 +281,12 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchConfig();
     fetchStats();
     fetchLeaderboard();
+    fetchNews();
+    
+    // Init Timers
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    setInterval(updateLastUpdateTime, 1000);
 
     // Floating CTA Delay
     setTimeout(() => {

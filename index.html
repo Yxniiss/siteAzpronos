@@ -13,26 +13,26 @@
     <!-- Banderole Animée -->
     <div class="scrolling-banner">
         <div class="banner-content">
-            <span class="banner-item">🎁 <span>30 € OFFERTS</span></span>
+            <span class="banner-item">🎁 <span class="neon-text-animated">30 € OFFERTS</span></span>
             <span class="banner-item">•</span>
-            <span class="banner-item">CODE <span>AZZPRONOS</span></span>
+            <span class="banner-item">CODE <span class="neon-text-animated">AZZPRONOS</span></span>
             <span class="banner-item">•</span>
             <span class="banner-item">BONUS DE BIENVENUE</span>
             <span class="banner-item">•</span>
-            <span class="banner-item">🏆 <span>3 000 € À PARTAGER</span></span>
+            <span class="banner-item">🏆 <span class="neon-text-animated">3 000 € À PARTAGER</span></span>
             <span class="banner-item">•</span>
             <span class="banner-item">TOP 10</span>
             <span class="banner-item">•</span>
             <span class="banner-item">TELEGRAM OFFICIEL</span>
             <span class="banner-item">•</span>
             <!-- Repeat for seamless scroll -->
-            <span class="banner-item">🎁 <span>30 € OFFERTS</span></span>
+            <span class="banner-item">🎁 <span class="neon-text-animated">30 € OFFERTS</span></span>
             <span class="banner-item">•</span>
-            <span class="banner-item">CODE <span>AZZPRONOS</span></span>
+            <span class="banner-item">CODE <span class="neon-text-animated">AZZPRONOS</span></span>
             <span class="banner-item">•</span>
             <span class="banner-item">BONUS DE BIENVENUE</span>
             <span class="banner-item">•</span>
-            <span class="banner-item">🏆 <span>3 000 € À PARTAGER</span></span>
+            <span class="banner-item">🏆 <span class="neon-text-animated">3 000 € À PARTAGER</span></span>
             <span class="banner-item">•</span>
             <span class="banner-item">TOP 10</span>
             <span class="banner-item">•</span>
@@ -42,7 +42,7 @@
 
     <!-- Bandeau d'information -->
     <div class="info-bandeau">
-        🔥 <strong>BONUS +200 %</strong> DISPONIBLE AVEC LE CODE <strong>AZZPRONOS</strong> • ⚡ LE TOP 10 SE PARTAGE <strong>3 000 €</strong> CHAQUE MOIS.
+        🔥 <strong>BONUS +200 %</strong> DISPONIBLE AVEC LE CODE <strong class="neon-text-animated">AZZPRONOS</strong> • ⚡ LE TOP 10 SE PARTAGE <strong>3 000 €</strong> CHAQUE MOIS.
     </div>
 
     <!-- Background Immersif -->
@@ -69,7 +69,7 @@
             <div class="code-info">
                 <span class="pulse-dot"></span>
                 <strong>CODE :</strong>
-                <span class="code-value">AZZPRONOS</span>
+                <span class="code-value neon-text-animated">AZZPRONOS</span>
             </div>
             <button class="btn-copy-small" onclick="copyCode()">COPIER LE CODE</button>
         </div>
@@ -81,14 +81,14 @@
             <h4>🎁 TON BONUS</h4>
             <button class="close-cta" onclick="this.parentElement.parentElement.classList.remove('visible')">&times;</button>
         </div>
-        <p>Utilise le code <strong>AZZPRONOS</strong> et triple ton premier dépôt !</p>
+        <p>Utilise le code <span class="neon-text-animated" style="font-weight: 900;">AZZPRONOS</span> et triple ton premier dépôt !</p>
         <a href="#" class="btn-mini aff-link">J'EN PROFITE →</a>
     </div>
 
     <header>
         <nav class="container">
             <div class="logo">
-                <span class="neon-text">AZZ</span><span>PRONOS</span>
+                <span class="neon-text neon-text-animated">AZZ</span><span>PRONOS</span>
             </div>
             <button class="mobile-menu-toggle" id="menu-toggle">
                 <span></span>
@@ -102,13 +102,13 @@
                 <li><a href="#community">Communauté</a></li>
                 <li class="mobile-only-socials">
                     <div class="header-socials">
-                        <a href="#" class="social-icon telegram-link">TG</a>
+                        <a href="#" class="social-icon telegram-link"><img src="telegram-seeklogo.png" alt="Telegram" style="width: 20px; height: 20px;"></a>
                         <a href="#" class="social-icon">X</a>
                     </div>
                 </li>
             </ul>
             <div class="header-socials desktop-only-socials">
-                <a href="#" class="social-icon telegram-link">TG</a>
+                <a href="#" class="social-icon telegram-link"><img src="telegram-seeklogo.png" alt="Telegram" style="width: 20px; height: 20px;"></a>
                 <a href="#" class="social-icon">X</a>
             </div>
         </nav>
@@ -122,27 +122,41 @@
                     <div class="hero-text-content">
                         <div class="m-sticker" style="position: relative; top: 0; left: 0; display: inline-block; margin-bottom: 20px; background: var(--grad-purple-green); border: none;">🔥 TRIPLE TON DÉPÔT</div>
                         <div class="logo-hero" style="margin-bottom: 20px;">
-                            <span class="neon-text" style="font-size: 3rem; font-weight: 900;">AZZ</span><span style="font-size: 3rem; font-weight: 900;">PRONOS</span>
+                            <span class="neon-text neon-text-animated" style="font-size: 3rem; font-weight: 900;">AZZ</span><span style="font-size: 3rem; font-weight: 900;">PRONOS</span>
                         </div>
                         <div class="badge-live grad-animated" style="background: rgba(34, 197, 94, 0.1); color: var(--neon-green); border: 1px solid var(--glass-border-green); padding: 10px 20px; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px; font-weight: 900; margin-bottom: 10px;">
                             <span class="live-indicator" style="background: var(--neon-green); box-shadow: 0 0 10px var(--neon-green-glow); width: 10px; height: 10px; border-radius: 50%;"></span> INSCRIPTION AUTOMATIQUE
                         </div>
-                        <h1 style="font-size: 5.5rem; margin-top: 10px; line-height: 1;"><span class="grad-text">3 000 €</span> à gagner ce mois-ci</h1>
-                        <p style="font-size: 1.5rem; max-width: 800px; margin-top: 30px; color: var(--text-dim);">Utilise le code <span class="neon-purple-text" style="font-weight: 900;">AZZPRONOS</span> lors de ton inscription sur Shuffle et grimpe dans le classement mensuel pour tenter de prendre ta part des récompenses.</p>
+                        <aside class="official-partnership" aria-label="AZZPRONOS et Shuffle, partenaire officiel">
+                            <div class="partner-lockup" aria-label="AZZPRONOS">
+                                <span class="partner-azz">AZZ</span><span>PRONOS</span>
+                            </div>
+                            <span class="partner-divider" aria-hidden="true"></span>
+                            <img class="partner-shuffle-logo" src="idnz9_cfSx_logos.png" alt="Logo Shuffle">
+                            <div class="partner-copy">
+                                <strong>PARTENAIRE OFFICIEL</strong>
+                                <span>Avantages et récompenses réservés à la communauté.</span>
+                            </div>
+                        </aside>
+                        <h1 style="font-size: 5.5rem; margin-top: 10px; line-height: 1;"><span class="neon-text-animated">3 000 €</span> à gagner ce mois-ci</h1>
+                        <p style="font-size: 1.5rem; max-width: 800px; margin-top: 30px; color: var(--text-dim);">Utilise le code <span class="neon-text-animated" style="font-weight: 900;">AZZPRONOS</span> lors de ton inscription sur <img src="idnz9_cfSx_logos.png" alt="Shuffle" style="height: 28px; vertical-align: middle; margin-top: -4px;"> et grimpe dans le classement mensuel pour tenter de prendre ta part des récompenses.</p>
                         
                         <!-- Bloc Code repositionné ici -->
-                        <div class="neon-code-card reveal-element" style="margin-top: 40px; max-width: 500px;">
+                        <div class="neon-code-card reveal-element neon-flicker-slow" style="margin-top: 40px; max-width: 500px;">
                             <div class="m-sticker" style="top: -15px; right: 20px;">🎁 TON BONUS</div>
                             <span class="label">CODE BONUS</span>
                             <div class="code-wrapper">
-                                <span class="code">AZZPRONOS</span>
-                                <button class="btn-neon-green grad-animated" onclick="copyCode()">📋 COPIER</button>
+                                <span class="code neon-text-animated">AZZPRONOS</span>
+                                <button class="btn-neon-green grad-animated neon-btn-ultra" onclick="copyCode()">📋 COPIER</button>
                             </div>
                         </div>
 
                         <div class="hero-actions" style="margin-top: 50px; display: flex; gap: 20px; flex-wrap: wrap;">
-                            <a href="#" class="btn-neon aff-link">🟣 REJOINDRE SHUFFLE</a>
-                            <a href="#" class="btn-glass telegram-link">🔵 TELEGRAM OFFICIEL</a>
+                            <a href="#" class="btn-neon aff-link">🟣 REJOINDRE <img src="idnz9_cfSx_logos.png" alt="Shuffle" style="height: 20px; vertical-align: middle; margin-left: 5px;"></a>
+                            <a href="#" class="btn-glass telegram-link" style="display: flex; align-items: center; gap: 10px;">
+                                <img src="telegram-seeklogo.png" alt="Telegram" style="width: 24px; height: 24px;">
+                                TELEGRAM OFFICIEL
+                            </a>
                             <a href="#tutorial" class="btn-glass">📖 TUTORIEL</a>
                         </div>
                     </div>
@@ -155,14 +169,14 @@
                     </div>
                 </div>
 
-                <div class="hero-intro-conversion reveal-element" style="margin-top: 120px;">
+                <div class="hero-intro-conversion reveal-element">
                     <div class="intro-content">
                         <div class="conversion-title">Monte dans le classement. Prends ta part du butin.</div>
                         <div class="intro-text">
-                            <p style="font-size: 1.6rem; color: var(--text-dim);">Utilise <span class="highlight">AZZPRONOS</span>, profite de ton bonus, rejoins la communauté et tente de grimper jusqu'au Top 10.</p>
+                            <p style="font-size: 1.6rem; color: var(--text-dim);">Utilise <span class="highlight neon-text-animated">AZZPRONOS</span>, profite de ton bonus, rejoins la communauté et tente de grimper jusqu'au Top 10.</p>
                         </div>
                         <div class="intro-buttons" style="margin-top: 40px;">
-                            <a href="#" class="btn-neon-green grad-animated aff-link" style="padding: 25px 60px; font-size: 1.5rem; border-radius: 20px;">DÉPOSER & JOUER MAINTENANT</a>
+                            <a href="#" class="btn-neon-green grad-animated aff-link neon-btn-ultra" style="padding: 25px 60px; font-size: 1.5rem; border-radius: 20px;">DÉPOSER & JOUER MAINTENANT</a>
                         </div>
                     </div>
                 </div>
@@ -170,22 +184,22 @@
                 <div class="stats-row reveal-element stagger-1">
                     <div class="stat-card neon-border neon-pulse">
                         <span class="s-icon">🎁</span>
-                        <span class="s-value">+200 %</span>
+                        <span class="s-value neon-text-animated">+200 %</span>
                         <span class="s-label">BONUS MAX</span>
                     </div>
                     <div class="stat-card neon-border-green neon-pulse stagger-2">
                         <span class="s-icon">💰</span>
-                        <span class="s-value">30 €</span>
+                        <span class="s-value neon-text-animated">30 €</span>
                         <span class="s-label">OFFERTS</span>
                     </div>
                     <div class="stat-card neon-border neon-pulse stagger-3">
                         <span class="s-icon">🏆</span>
-                        <span class="s-value">3 000 €</span>
+                        <span class="s-value neon-text-animated">3 000 €</span>
                         <span class="s-label">PAR MOIS</span>
                     </div>
                     <div class="stat-card neon-border-green neon-pulse stagger-4">
                         <span class="s-icon">👑</span>
-                        <span class="s-value">TOP 10</span>
+                        <span class="s-value neon-text-animated">TOP 10</span>
                         <span class="s-label">RÉCOMPENSÉ</span>
                     </div>
                 </div>
@@ -195,21 +209,20 @@
         <!-- Promo Section -->
         <section class="promo-box-section">
             <div class="container">
-                <div class="spectacular-promo reveal-element">
+                <div class="spectacular-promo reveal-element neon-flicker-slow">
                     <div class="m-sticker" style="top: -20px; right: 20px;">🔥 OFFRE LIMITÉE</div>
                     <h2 class="promo-title-huge">TRIPLE TON DÉPÔT</h2>
-                    <div class="promo-subtitle" style="font-size: 2.5rem; font-weight: 700; color: var(--neon-green); margin-bottom: 30px;">30 € offerts</div>
+                    <div class="promo-subtitle neon-text-animated" style="font-size: 2.5rem; font-weight: 700; color: var(--neon-green); margin-bottom: 30px;">30 € offerts</div>
                     <p style="font-size: 1.4rem; color: var(--text-dim); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                        Active le code <span class="neon-purple-text" style="font-weight: 900;">AZZPRONOS</span> dès maintenant pour bénéficier de l'offre exclusive et commencer ton ascension dans le classement.
+                        Active le code <span class="neon-text-animated" style="font-weight: 900;">AZZPRONOS</span> dès maintenant pour bénéficier de l'offre exclusive et commencer ton ascension dans le classement.
                     </p>
-                    <a href="#" class="btn-neon-green grad-animated aff-link" style="padding: 25px 60px; font-size: 1.5rem; border-radius: 20px;">PROFITER DU BONUS MAINTENANT →</a>
+                    <a href="#" class="btn-neon-green grad-animated aff-link neon-btn-ultra" style="padding: 25px 60px; font-size: 1.5rem; border-radius: 20px;">PROFITER DU BONUS MAINTENANT →</a>
                 </div>
             </div>
         </section>
 
         <!-- Bonus Section -->
         <section id="bonus" class="bonus-section-v2">
-            <div class="m-sticker" style="top: 50px; right: 5%;">🔥 BONUS EXCLUSIF</div>
             <div class="container">
                 <div class="section-title center">
                     <span class="pre-title">AVANTAGES EXCLUSIFS</span>
@@ -235,6 +248,68 @@
                         <p>Accès à notre communauté privée et support prioritaire sur Telegram.</p>
                     </div>
                 </div>
+                
+                <!-- Détail technique du Bonus -->
+                <div class="bonus-details-box reveal-element" style="margin-top: 80px;">
+                    <div class="section-title center">
+                        <span class="pre-title">TRANSPARENCE</span>
+                        <h2>Comment fonctionne ton <span class="neon-purple-text">bonus ?</span></h2>
+                    </div>
+                    
+                    <div class="bonus-info-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;">
+                        <div class="info-card-mini neon-border">
+                            <span class="ic-label">🎁 BONUS</span>
+                            <span class="ic-value">+200 %</span>
+                        </div>
+                        <div class="info-card-mini neon-border-green">
+                            <span class="ic-label">📈 GAIN MAX</span>
+                            <span class="ic-value">×5</span>
+                        </div>
+                        <div class="info-card-mini neon-border">
+                            <span class="ic-label">🎯 WAGER</span>
+                            <span class="ic-value">×40</span>
+                        </div>
+                        <div class="info-card-mini neon-border-green">
+                            <span class="ic-label">🛡️ MISE MAX</span>
+                            <span class="ic-value">10 %</span>
+                        </div>
+                    </div>
+
+                    <div class="concrete-example reveal-element" style="margin-top: 60px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px;">
+                        <h3 style="text-align: center; margin-bottom: 40px;">💡 Exemple avec un dépôt de <span class="neon-green-text">100 €</span></h3>
+                        
+                        <div class="example-flow" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                            <div class="flow-item">
+                                <span class="f-label">DÉPÔT</span>
+                                <span class="f-value">100 €</span>
+                            </div>
+                            <div class="flow-arrow">➜</div>
+                            <div class="flow-item">
+                                <span class="f-label">BONUS (+200%)</span>
+                                <span class="f-value" style="color: var(--neon-purple);">200 €</span>
+                            </div>
+                            <div class="flow-arrow">➜</div>
+                            <div class="flow-item highlight">
+                                <span class="f-label">SOLDE DÉPART</span>
+                                <span class="f-value">300 €</span>
+                            </div>
+                            <div class="flow-arrow">➜</div>
+                            <div class="flow-item">
+                                <span class="f-label">WAGER (×40)</span>
+                                <span class="f-value" style="color: var(--neon-green);">12 000 €</span>
+                            </div>
+                            <div class="flow-arrow">➜</div>
+                            <div class="flow-item">
+                                <span class="f-label">RETRAIT MAX</span>
+                                <span class="f-value">500 €</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: var(--text-muted); text-align: center;">
+                            * La mise maximale par pari est limitée à 10% du montant de ton dépôt initial. Le gain maximum retirable est de 5 fois ton dépôt initial après complétion du wager.
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -242,15 +317,34 @@
         <section id="leaderboard" class="leaderboard-section-v2">
             <div class="m-sticker" style="top: 20px; left: 10%;">⚡ EN DIRECT</div>
             <div class="container">
-                <div class="leaderboard-header center" style="flex-direction: column; align-items: center; text-align: center; margin-bottom: 80px;">
+                <div class="leaderboard-header center" style="flex-direction: column; align-items: center; text-align: center; margin-bottom: 40px;">
                     <span class="pre-title" style="color: var(--neon-green); letter-spacing: 5px;">COMPÉTITION LIVE</span>
-                    <h2 style="font-size: 4.5rem; line-height: 1.1; margin: 20px 0;">🏆 MONTE DANS LE <span class="neon-purple-text">CLASSEMENT</span></h2>
-                    <p style="font-size: 1.8rem; color: var(--text-dim); font-weight: 700; margin-bottom: 15px;">Prends ta place. Prends ta part du butin.</p>
-                    <p style="font-size: 1.3rem; color: var(--text-muted); max-width: 800px;">Chaque mois, <strong>3 000 €</strong> sont à se partager entre les 10 meilleurs joueurs. Chaque mise te rapproche du Top 10.</p>
+                    <h2 style="font-size: 4.5rem; line-height: 1.1; margin: 20px 0;">🏆 MONTE DANS LE <span class="neon-text-animated">CLASSEMENT</span></h2>
                     
-                    <div class="live-status-pill" style="margin-top: 40px; background: rgba(34, 197, 94, 0.1); border: 1px solid var(--neon-green); padding: 12px 24px; border-radius: 100px; display: inline-flex; align-items: center; gap: 12px;">
-                        <span class="pulse-dot"></span>
-                        <span style="color: var(--neon-green); font-weight: 900; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">● EN DIRECT - Actualisé automatiquement</span>
+                    <!-- Nouveau : Countdown -->
+                    <div class="countdown-container reveal-element neon-border-flow" id="countdown-timer" style="margin-bottom: 30px;">
+                        <div class="countdown-label">FIN DU CLASSEMENT DANS</div>
+                        <div class="countdown-timer-wrapper">
+                            <div class="timer-block"><span id="days" class="neon-text-animated">--</span><label>jours</label></div>
+                            <div class="timer-block"><span id="hours" class="neon-text-animated">--</span><label>heures</label></div>
+                            <div class="timer-block"><span id="mins" class="neon-text-animated">--</span><label>min</label></div>
+                            <div class="timer-block"><span id="secs" class="neon-text-animated">--</span><label>sec</label></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 1.8rem; color: var(--text-dim); font-weight: 700; margin-bottom: 15px;">Prends ta place. Prends ta part du butin.</p>
+                    
+                    <div class="live-status-container" style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 20px;">
+                        <div class="live-status-pill" style="background: rgba(34, 197, 94, 0.1); border: 1px solid var(--neon-green); padding: 12px 24px; border-radius: 100px; display: inline-flex; align-items: center; gap: 12px;">
+                            <span class="pulse-dot"></span>
+                            <span style="color: var(--neon-green); font-weight: 900; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;" id="live-indicator-text">En direct · actualisé il y a 0s</span>
+                        </div>
+                        <div class="players-active-count" style="color: var(--text-dim); font-weight: 600;">
+                            🟢 <span id="active-players-count">--</span> joueurs actifs ce mois-ci
+                        </div>
+                        <div class="min-wager-alert" style="color: var(--neon-purple); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border: 1px dashed var(--neon-purple); padding: 8px 16px; border-radius: 8px; margin-top: 10px;">
+                            ⚠️ Minimum 1 000 $ de wager pour être récompensé
+                        </div>
                     </div>
                 </div>
 
@@ -260,7 +354,7 @@
                 </div>
 
                 <div class="leaderboard-wrapper">
-                    <div class="leaderboard-glass-box reveal-element">
+                    <div class="leaderboard-glass-box reveal-element neon-border-flow">
                         <table class="premium-table">
                             <thead>
                                 <tr>
@@ -289,33 +383,94 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Section Explicative Classement Horizontale Wrap avec Image 1 -->
+            <div class="leaderboard-info-section neon-border-flow">
+                <div class="container">
+                    <div class="leaderboard-info-box reveal-element" style="padding: 30px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border); border-radius: 20px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                        <h3 style="color: white; margin-bottom: 25px; font-size: 1.5rem; text-align: center;">Comment fonctionne le <span class="neon-purple-text">classement ?</span></h3>
+                        <div class="info-grid-horizontal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                            <div class="info-item" style="padding: 15px; border-right: 1px solid rgba(255,255,255,0.05);">
+                                <h4 style="color: var(--neon-green); margin-bottom: 8px; font-size: 1rem; display: flex; align-items: center; gap: 8px;">📊 Wager Pondéré</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.5;">Le wager est pondéré par jeu (les jeux à faible marge comptent moins). Ce montant peut différer de ton wager brut.</p>
+                            </div>
+                            <div class="info-item" style="padding: 15px; border-right: 1px solid rgba(255,255,255,0.05);">
+                                <h4 style="color: var(--neon-green); margin-bottom: 8px; font-size: 1rem; display: flex; align-items: center; gap: 8px;">🔒 Confidentialité</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.5;">Les pseudonymes sont partiellement masqués (ex: Azz*****nos) pour garantir ta sécurité.</p>
+                            </div>
+                            <div class="info-item" style="padding: 15px; border-right: 1px solid rgba(255,255,255,0.05);">
+                                <h4 style="color: var(--neon-green); margin-bottom: 8px; font-size: 1rem; display: flex; align-items: center; gap: 8px;">⏱️ Mise à jour</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.5;">Données actualisées en direct via l'API. Remise à zéro automatique le 1er de chaque mois.</p>
+                            </div>
+                            <div class="info-item" style="padding: 15px;">
+                                <h4 style="color: var(--neon-green); margin-bottom: 8px; font-size: 1rem; display: flex; align-items: center; gap: 8px;">✅ Conditions</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.5;">Mises finalisées uniquement. Minimum 1 000 $ de wager requis pour être éligible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Rewards -->
-        <section id="rewards" class="rewards-section-v2" style="padding: 140px 0; background: #000; position: relative; overflow: hidden;">
-            <div class="m-sticker" style="top: 40px; right: 10%;">🎁 CASH DIRECT</div>
+        <section id="rewards" class="rewards-section-v2" style="padding: 140px 0; position: relative; overflow: hidden;">
             <div class="container">
                 <div class="section-title center">
                     <span class="pre-title" style="color: var(--neon-purple); letter-spacing: 5px;">BUTIN MENSUEL</span>
-                    <h2 class="rewards-title-huge">3 000 € À SE PARTAGER</h2>
+                    <h2 class="rewards-title-huge neon-text-animated neon-flicker-slow">3 000 € À SE PARTAGER</h2>
                     <p style="font-size: 1.8rem; color: var(--text-dim); font-weight: 700;">Chaque mois. Top 10 récompensé.</p>
                 </div>
 
                 <div class="rewards-grid-new">
                     <div class="reward-card-new wide reveal-element">
-                        <span class="r-label">CHAMPION #1</span>
+                        <span class="r-label">🥇 CHAMPION #1</span>
                         <h3 class="r-value">1 500 €</h3>
                         <p class="r-desc">LE ROI DU CLASSEMENT REÇOIT LA PART DU LION</p>
                     </div>
-                    <div class="reward-card-new reveal-element">
-                        <span class="r-label">TOP 2-5</span>
-                        <span class="r-value">1 000 €</span>
-                        <p class="r-desc">PARTAGÉS ENTRE LES 4 PRÉTENDANTS AU TRÔNE</p>
-                    </div>
-                    <div class="reward-card-new reveal-element">
-                        <span class="r-label">TOP 6-10</span>
-                        <span class="r-value">500 €</span>
-                        <p class="r-desc">PARTAGÉS ENTRE LES OUTSIDERS DE L'ÉLITE</p>
+                    <div class="reward-list-container reveal-element" style="grid-column: span 2; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px;">
+                        <div class="reward-list-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🥈 2ème place</span>
+                                <span class="neon-green-text" style="font-weight: 900; font-family: 'JetBrains Mono';">250 €</span>
+                            </div>
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🥉 3ème place</span>
+                                <span class="neon-green-text" style="font-weight: 900; font-family: 'JetBrains Mono';">250 €</span>
+                            </div>
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🏅 4ème place</span>
+                                <span class="neon-green-text" style="font-weight: 900; font-family: 'JetBrains Mono';">250 €</span>
+                            </div>
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🏅 5ème place</span>
+                                <span class="neon-green-text" style="font-weight: 900; font-family: 'JetBrains Mono';">250 €</span>
+                            </div>
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🎖️ 6ème place</span>
+                                <span class="neon-purple-text" style="font-weight: 900; font-family: 'JetBrains Mono';">100 €</span>
+                            </div>
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🎖️ 7ème place</span>
+                                <span class="neon-purple-text" style="font-weight: 900; font-family: 'JetBrains Mono';">100 €</span>
+                            </div>
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🎖️ 8ème place</span>
+                                <span class="neon-purple-text" style="font-weight: 900; font-family: 'JetBrains Mono';">100 €</span>
+                            </div>
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🎖️ 9ème place</span>
+                                <span class="neon-purple-text" style="font-weight: 900; font-family: 'JetBrains Mono';">100 €</span>
+                            </div>
+                            <div class="reward-item-row" style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <span style="font-weight: 700; color: var(--text-dim);">🎖️ 10ème place</span>
+                                <span class="neon-purple-text" style="font-weight: 900; font-family: 'JetBrains Mono';">100 €</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                            <span style="font-size: 1.2rem; color: var(--text-dim);">Total reversé chaque mois : <strong class="grad-text" style="font-size: 1.5rem;">3 000 €</strong></span>
+                            <br>
+                            <span style="color: var(--neon-green); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">10 joueurs récompensés</span>
+                        </div>
                     </div>
                 </div>
                 
@@ -336,12 +491,12 @@
                     <div class="t-step reveal-element neon-border">
                         <span class="t-num">1</span>
                         <h3>Création du compte</h3>
-                        <p>Rends-toi sur Shuffle via nos liens officiels pour créer ton nouveau compte joueur.</p>
+                        <p>Rends-toi sur <img src="idnz9_cfSx_logos.png" alt="Shuffle" style="height: 20px; vertical-align: middle;"> via nos liens officiels pour créer ton nouveau compte joueur.</p>
                     </div>
                     <div class="t-step reveal-element neon-border-green">
                         <span class="t-num">2</span>
-                        <h3>Code AZZPRONOS</h3>
-                        <p>Saisis le code <span class="neon-purple-text">AZZPRONOS</span> lors de l'inscription pour débloquer tes avantages exclusifs.</p>
+                        <h3>Code <span class="neon-text-animated">AZZPRONOS</span></h3>
+                        <p>Saisis le code <span class="neon-text-animated" style="font-weight: 900;">AZZPRONOS</span> lors de l'inscription pour débloquer tes avantages exclusifs.</p>
                     </div>
                     <div class="t-step reveal-element neon-border">
                         <span class="t-num">3</span>
@@ -357,32 +512,51 @@
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section id="faq" class="faq-v2">
+        <!-- FAQ & Actu Foot Side by Side for compactness -->
+        <section class="compact-info-section" style="padding: 100px 0;">
             <div class="container">
-                <div class="section-title center">
-                    <span class="pre-title">QUESTIONS</span>
-                    <h2>Une <span class="neon-purple-text">hésitation ?</span></h2>
-                </div>
-                <div class="faq-accordion reveal-element">
-                    <div class="faq-item">
-                        <details>
-                            <summary>Où entrer le code bonus ?</summary>
-                            <p>Lors de votre inscription sur Shuffle, entrez <strong>AZZPRONOS</strong> dans la case "Referral Code" ou dans vos paramètres d'affiliation après coup.</p>
-                        </details>
+                <div class="side-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 60px;">
+                    
+                    <!-- News -->
+                    <div id="news" class="news-column">
+                        <div class="section-title left">
+                            <span class="pre-title" style="color: var(--neon-green);">ACTUALITÉS</span>
+                            <h2 style="font-size: 2.5rem; margin: 10px 0;">⚽ ACTU <span class="neon-purple-text">FOOT</span></h2>
+                        </div>
+                        <div class="news-grid-compact" id="news-container" style="margin-top: 30px;">
+                            <!-- Injected by JS -->
+                            <div class="neon-spinner"></div>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <details>
-                            <summary>Quand sont payés les gains ?</summary>
-                            <p>Les gains du classement sont versés directement sur votre compte Shuffle dans les 48h suivant la clôture mensuelle.</p>
-                        </details>
+
+                    <!-- FAQ -->
+                    <div id="faq" class="faq-column">
+                        <div class="section-title left">
+                            <span class="pre-title">QUESTIONS</span>
+                            <h2>UNE <span class="neon-purple-text">HÉSITATION ?</span></h2>
+                        </div>
+                        <div class="faq-accordion reveal-element" style="margin-top: 30px;">
+                            <div class="faq-item">
+                                <details>
+                                    <summary>Où entrer le code bonus ?</summary>
+                                    <p>Lors de votre inscription sur Shuffle, entrez <strong class="neon-text-animated">AZZPRONOS</strong> dans la case "Referral Code".</p>
+                                </details>
+                            </div>
+                            <div class="faq-item">
+                                <details>
+                                    <summary>Quand sont payés les gains ?</summary>
+                                    <p>Les gains du classement sont versés directement sur votre compte Shuffle dans les 48h.</p>
+                                </details>
+                            </div>
+                            <div class="faq-item">
+                                <details>
+                                    <summary>Le classement est-il en direct ?</summary>
+                                    <p>Oui, nous récupérons les données via l'API officielle de Shuffle en temps réel.</p>
+                                </details>
+                            </div>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <details>
-                            <summary>Le classement est-il en direct ?</summary>
-                            <p>Oui, nous récupérons les données via l'API officielle de Shuffle. Les mises sont actualisées en temps réel.</p>
-                        </details>
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -390,51 +564,45 @@
         <!-- Community -->
         <section id="community" class="community-v2" style="position: relative; overflow: hidden; padding: 140px 0;">
             <div class="sticker-float s-offered m-sticker">🎁 30 € OFFERTS</div>
-            <div class="sticker-float s-azz m-sticker">🔥 AZZPRONOS</div>
+            <div class="sticker-float s-azz m-sticker">🔥 <span class="neon-text-animated">AZZPRONOS</span></div>
             
             <div class="container">
                 <div class="section-title center">
                     <span class="pre-title" style="letter-spacing: 5px;">RÉSEAUX SOCIAUX</span>
                     <h2 style="font-size: 4rem; margin: 20px 0;">REJOINS LA <span class="neon-purple-text">COMMUNAUTÉ</span></h2>
-                    <p style="font-size: 1.3rem; color: var(--text-dim); max-width: 700px; margin: 0 auto;">Ne joue plus jamais seul. Rejoins l'élite AZZPRONOS sur toutes nos plateformes.</p>
+                    <p style="font-size: 1.3rem; color: var(--text-dim); max-width: 700px; margin: 0 auto;">Ne joue plus jamais seul. Rejoins l'élite AZZPRONOS pour ne rien rater.</p>
                 </div>
                 
                 <div class="social-grid-large">
+                    <!-- Telegram : Priorité 1 -->
                     <a href="#" class="social-card-v2 card-tg reveal-element telegram-link">
-                        <span class="s-icon">📱</span>
-                        <span class="s-name">Telegram</span>
-                        <span class="s-tag">Canal Officiel</span>
-                        <span class="s-cta">Rejoindre</span>
+                        <div class="m-sticker" style="top: 15px; right: 15px; background: #0088cc; font-size: 0.6rem;">OFFICIEL</div>
+                        <span class="s-icon"><img src="telegram-seeklogo.png" alt="Telegram" style="width: 50px; height: 50px;"></span>
+                        <span class="s-name">Telegram Officiel</span>
+                        <span class="s-tag">Classement, annonces et actualités AZZPRONOS</span>
+                        <span class="s-cta">REJOINDRE TELEGRAM</span>
                     </a>
+
+                    <!-- Tutoriel : Priorité 2 -->
                     <a href="#tutorial" class="social-card-v2 card-tuto reveal-element">
                         <span class="s-icon">📖</span>
-                        <span class="s-name">Tutoriel</span>
-                        <span class="s-tag">Guide complet</span>
-                        <span class="s-cta">Apprendre</span>
+                        <span class="s-name">Tutoriel Complet</span>
+                        <span class="s-tag">Guide pas à pas pour créer ton compte et utiliser le code AZZPRONOS</span>
+                        <span class="s-cta">VOIR LE TUTORIEL</span>
                     </a>
-                    <a href="#" class="social-card-v2 card-discord reveal-element">
-                        <span class="s-icon">💬</span>
+
+                    <!-- Les autres cartes seront masquées par JS si pas de lien dans le config -->
+                    <a href="#" class="social-card-v2 card-discord reveal-element" id="link-discord">
+                        <span class="s-icon"><img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" alt="Discord" style="width: 50px; height: 50px;"></span>
                         <span class="s-name">Discord</span>
-                        <span class="s-tag">Communauté VIP</span>
-                        <span class="s-cta">Discuter</span>
+                        <span class="s-tag">Communauté VIP & Entraide</span>
+                        <span class="s-cta">REJOINDRE DISCORD</span>
                     </a>
-                    <a href="#" class="social-card-v2 card-x reveal-element">
+                    <a href="#" class="social-card-v2 card-x reveal-element" id="link-x" style="display: none;">
                         <span class="s-icon">🐦</span>
                         <span class="s-name">Twitter (X)</span>
-                        <span class="s-tag">Actualités live</span>
+                        <span class="s-tag">Actualités live & Pronos</span>
                         <span class="s-cta">Suivre</span>
-                    </a>
-                    <a href="#" class="social-card-v2 card-tiktok reveal-element">
-                        <span class="s-icon">🎵</span>
-                        <span class="s-name">TikTok</span>
-                        <span class="s-tag">Vidéos & Clips</span>
-                        <span class="s-cta">Regarder</span>
-                    </a>
-                    <a href="#" class="social-card-v2 card-insta reveal-element">
-                        <span class="s-icon">📸</span>
-                        <span class="s-name">Instagram</span>
-                        <span class="s-tag">Story & Lifestyle</span>
-                        <span class="s-cta">S'abonner</span>
                     </a>
                 </div>
             </div>
@@ -443,6 +611,23 @@
         <!-- Final Stickers -->
         <div class="sticker-float s-triple m-sticker" style="background: var(--neon-green);">depot *3</div>
         <div class="sticker-float s-top10 m-sticker">🏆 TOP 10</div>
+        <!-- Final CTA -->
+        <section class="final-cta-section" style="padding: 100px 0; position: relative;">
+            <div class="container">
+                <div class="spectacular-promo reveal-element" style="border-radius: 40px; padding: 60px;">
+                    <h2 style="font-size: 3.5rem; margin-bottom: 20px;">🚀 PRÊT À GRIMPER DANS LE <span class="neon-text-animated">CLASSEMENT ?</span></h2>
+                    <p style="font-size: 1.4rem; color: var(--text-dim); max-width: 800px; margin-bottom: 40px;">
+                        Utilise le code <span class="neon-text-animated" style="font-weight: 900; font-size: 2rem;">AZZPRONOS</span>, profite de l'offre disponible et commence à faire monter ton wager pour prendre ta part du butin.
+                    </p>
+                    
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="#" class="btn-neon-green grad-animated aff-link neon-btn-ultra" style="padding: 20px 50px; font-size: 1.3rem; border-radius: 15px;">J'EN PROFITE</a>
+                        <a href="#tutorial" class="btn-glass" style="padding: 20px 50px; font-size: 1.3rem; border-radius: 15px;">VOIR LE TUTORIEL</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer style="padding: 100px 0 60px; border-top: 1px solid var(--glass-border); background: rgba(0,0,0,0.8); backdrop-filter: blur(20px);">
@@ -452,8 +637,14 @@
                     <div class="logo" style="margin-bottom: 20px;">
                         <span class="neon-text">AZZ</span><span>PRONOS</span>
                     </div>
+                    <div class="footer-partnership" aria-label="AZZPRONOS et Shuffle, partenaire officiel">
+                        <span>AZZPRONOS</span>
+                        <span class="footer-partnership-cross" aria-hidden="true">×</span>
+                        <img src="idnz9_cfSx_logos.png" alt="Logo Shuffle">
+                        <strong>PARTENAIRE OFFICIEL</strong>
+                    </div>
                     <p style="color: var(--text-dim); line-height: 1.8;">
-                        La plateforme de référence pour dominer Shuffle. Rejoins l'élite, utilise le code <strong>AZZPRONOS</strong>, et prends ta part du butin mensuel de 3 000 €.
+                        La plateforme de référence pour dominer <img src="idnz9_cfSx_logos.png" alt="Shuffle" style="height: 20px; vertical-align: middle;">. Rejoins l'élite, utilise le code <strong>AZZPRONOS</strong>, et prends ta part du butin mensuel de 3 000 €.
                     </p>
                 </div>
                 <div class="f-nav">
@@ -466,13 +657,18 @@
                     </ul>
                 </div>
                 <div class="f-legal">
-                    <h4 style="color: white; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px;">Responsabilité</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-                        AZZPRONOS est un site d'affiliation indépendant. Les offres sont soumises aux conditions des plateformes partenaires.
+                    <h4 style="color: white; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px;">Responsabilité & Mentions</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+                        <strong>AZZPRONOS</strong> est un site d'affiliation indépendant, non affilié à l'éditeur de Shuffle.com en tant qu'opérateur. Les offres promotionnelles sont soumises aux conditions générales de Shuffle et peuvent évoluer à tout moment.
                     </p>
-                    <div style="display: flex; gap: 15px; align-items: center;">
-                        <span style="background: #000; border: 1px solid var(--neon-purple); color: var(--neon-purple); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900;">18+</span>
-                        <span style="color: var(--text-dim); font-size: 0.8rem; font-weight: 700;">JOUER COMPORTE DES RISQUES</span>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <span style="background: #000; border: 1px solid var(--neon-purple); color: var(--neon-purple); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;">18+</span>
+                            <span style="color: var(--text-dim); font-size: 0.8rem; font-weight: 700;">INTERDIT AUX MINEURS</span>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); border-left: 2px solid var(--neon-purple); padding-left: 15px; font-style: italic;">
+                            Le jeu comporte des risques : endettement, dépendance, isolement. Appelez le 09 74 75 13 13 (appel non surtaxé). Jouez de manière responsable.
+                        </p>
                     </div>
                 </div>
             </div>
