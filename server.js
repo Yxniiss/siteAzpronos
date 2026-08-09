@@ -171,6 +171,11 @@ app.get('/api/config', (req, res) => {
     });
 });
 
+// Dedicated tutorial route must resolve before static middleware.
+app.get('/tutoriel', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tutoriel.html'));
+});
+
 // Static files AFTER API routes
 app.use(express.static(path.join(__dirname)));
 
