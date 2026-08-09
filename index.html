@@ -90,13 +90,24 @@
             <div class="logo">
                 <span class="neon-text">AZZ</span><span>PRONOS</span>
             </div>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#bonus">Bonus</a></li>
                 <li><a href="#leaderboard">Classement</a></li>
                 <li><a href="#rewards">Rewards</a></li>
                 <li><a href="#community">Communauté</a></li>
+                <li class="mobile-only-socials">
+                    <div class="header-socials">
+                        <a href="#" class="social-icon telegram-link">TG</a>
+                        <a href="#" class="social-icon">X</a>
+                    </div>
+                </li>
             </ul>
-            <div class="header-socials">
+            <div class="header-socials desktop-only-socials">
                 <a href="#" class="social-icon telegram-link">TG</a>
                 <a href="#" class="social-icon">X</a>
             </div>
@@ -106,26 +117,26 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-v2">
-            <div class="m-sticker" style="top: 10%; left: 5%;">🔥 TRIPLE TON DÉPÔT</div>
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-text-content">
-                        <div class="m-sticker" style="top: -40px; left: 0;">🟢 INSCRIPTION AUTOMATIQUE</div>
+                        <div class="m-sticker" style="position: relative; top: 0; left: 0; display: inline-block; margin-bottom: 20px; background: var(--grad-purple-green); border: none;">🔥 TRIPLE TON DÉPÔT</div>
                         <div class="logo-hero" style="margin-bottom: 20px;">
                             <span class="neon-text" style="font-size: 3rem; font-weight: 900;">AZZ</span><span style="font-size: 3rem; font-weight: 900;">PRONOS</span>
                         </div>
-                        <div class="badge-live grad-animated" style="background: var(--grad-purple-green); color: white; border: none; padding: 10px 20px; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px; font-weight: 900;">
-                            <span class="live-indicator" style="background: white; box-shadow: 0 0 10px white; width: 10px; height: 10px; border-radius: 50%;"></span> 3 000 € À GAGNER CE MOIS-CI
+                        <div class="badge-live grad-animated" style="background: rgba(34, 197, 94, 0.1); color: var(--neon-green); border: 1px solid var(--glass-border-green); padding: 10px 20px; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px; font-weight: 900; margin-bottom: 10px;">
+                            <span class="live-indicator" style="background: var(--neon-green); box-shadow: 0 0 10px var(--neon-green-glow); width: 10px; height: 10px; border-radius: 50%;"></span> INSCRIPTION AUTOMATIQUE
                         </div>
-                        <h1 style="font-size: 5.5rem; margin-top: 30px; line-height: 1;">Triple ton dépôt sur <span class="neon-purple-text">Shuffle</span> avec notre code.</h1>
-                        <p style="font-size: 1.5rem; max-width: 800px; margin-top: 30px; color: var(--text-dim);">Utilise le code <span class="neon-purple-text" style="font-weight: 900;">AZZPRONOS</span> lors de ton inscription sur Shuffle, profite du bonus de bienvenue, suis notre tutoriel et grimpe dans le classement mensuel pour tenter de prendre ta part des récompenses.</p>
+                        <h1 style="font-size: 5.5rem; margin-top: 10px; line-height: 1;"><span class="grad-text">3 000 €</span> à gagner ce mois-ci</h1>
+                        <p style="font-size: 1.5rem; max-width: 800px; margin-top: 30px; color: var(--text-dim);">Utilise le code <span class="neon-purple-text" style="font-weight: 900;">AZZPRONOS</span> lors de ton inscription sur Shuffle et grimpe dans le classement mensuel pour tenter de prendre ta part des récompenses.</p>
                         
-                        <div class="neon-code-card reveal-element" style="margin-top: 50px;">
+                        <!-- Bloc Code repositionné ici -->
+                        <div class="neon-code-card reveal-element" style="margin-top: 40px; max-width: 500px;">
                             <div class="m-sticker" style="top: -15px; right: 20px;">🎁 TON BONUS</div>
                             <span class="label">CODE BONUS</span>
                             <div class="code-wrapper">
                                 <span class="code">AZZPRONOS</span>
-                                <button class="btn-neon-green grad-animated" onclick="copyCode()" style="padding: 15px 30px; font-size: 1.2rem; border-radius: 12px; cursor: pointer;">📋 COPIER</button>
+                                <button class="btn-neon-green grad-animated" onclick="copyCode()">📋 COPIER</button>
                             </div>
                         </div>
 
