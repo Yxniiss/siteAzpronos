@@ -334,16 +334,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // show with small delay for UX
         setTimeout(() => { promo.classList.add('visible'); promo.style.opacity = '1'; }, 1200);
 
-        const closeBtn = promo.querySelector('.promo-close');
+        const closeBtn = promo.querySelector('.azzpromo-close');
         if (closeBtn) closeBtn.addEventListener('click', () => {
-            promo.style.transition = 'opacity .28s ease, transform .28s ease';
+            promo.style.transition = 'opacity .3s ease, transform .3s ease';
             promo.style.opacity = '0';
-            promo.style.transform = 'translateY(8px)';
-            setTimeout(() => { promo.style.display = 'none'; }, 300);
+            promo.style.transform = 'translateY(10px)';
+            setTimeout(() => { promo.style.display = 'none'; }, 350);
             localStorage.setItem('azzpromoDismissed', '1');
         });
 
-        const copyBtn = promo.querySelector('.promo-copy');
+        const copyBtn = promo.querySelector('.copy-btn');
         if (copyBtn) copyBtn.addEventListener('click', (e) => {
             const codeEl = promo.querySelector('.code-value');
             const codeText = (codeEl && codeEl.textContent) ? codeEl.textContent.trim() : (CONFIG.bonusCode || 'AZZPRONOS');
@@ -353,10 +353,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.textContent = '✓ COPIÉ !';
                 btn.classList.add('copied');
                 setTimeout(() => { btn.textContent = old; btn.classList.remove('copied'); }, 2000);
-            }).catch(() => { alert('Copie : ' + codeText); });
+            }).catch(() => {
+                // fallback
+                alert('Copie : ' + codeText);
+            });
         });
 
-        const cta = promo.querySelector('.promo-button');
-        if (cta) cta.addEventListener('click', () => { localStorage.setItem('azzpromoDismissed', '1'); });
+        // ensure clicking CTA removes promo optionally
+        const cta = promo.querySelector('.promo-cta');
+        if (cta) cta.addEventListener('click', () => {
+            localStorage.setItem('azzpromoDismissed', '1');
+        });
     })();
 });

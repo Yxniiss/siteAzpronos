@@ -1319,43 +1319,35 @@ nav { display: flex; justify-content: space-between; align-items: center; positi
 }
 
 /* Premium promo matching reference */
-.premium-promo{ position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 9999; width: calc(100% - 200px); max-width: 980px; border-radius: 20px; padding: 10px; }
+.premium-promo{ position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 9999; width: calc(100% - 120px); max-width: 1100px; border-radius: 20px; padding: 10px; }
 .premium-inner{ background: linear-gradient(180deg, rgba(8,10,12,0.88), rgba(12,14,16,0.92)); border-radius: 16px; padding: 18px 22px; display:flex; align-items:center; gap:20px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.02); }
 
-.premium-inner{ background: linear-gradient(180deg, rgba(8,10,12,0.88), rgba(12,14,16,0.92)); border-radius: 16px; padding: 14px 18px; display:flex; flex-direction:column; gap:12px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.02); position:relative; overflow:hidden; }
+.promo-close{ position:absolute; top:10px; right:10px; width:28px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:50%; background: transparent; border: none; color: rgba(255,255,255,0.6); font-size:14px; cursor:pointer; }
 
-/* decorative gradient border */
-.premium-promo::before{ content: ''; position: absolute; inset: -2px; background: linear-gradient(90deg,#8b5cf6,#22c55e); border-radius: 22px; z-index: 0; filter: blur(6px); opacity: 0.55; }
-.premium-promo::after{ content: ''; position: absolute; inset: 0; border-radius: 20px; pointer-events: none; z-index: 1; }
-
-.promo-close{ position:absolute; top:10px; right:12px; width:30px; height:30px; display:flex; align-items:center; justify-content:center; border-radius:50%; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.03); color: rgba(255,255,255,0.7); font-size:14px; cursor:pointer; z-index:3; }
-
-.promo-top{ display:flex; align-items:center; justify-content:space-between; gap:20px; z-index:2; }
 .promo-left{ display:flex; align-items:center; gap:14px; min-width:260px; }
-.promo-shuffle{ width:40px; height:40px; border-radius:10px; box-shadow: 0 6px 30px rgba(34,197,94,0.06); }
-.promo-left-top{ font-weight:900; font-size:22px; color: #a8ff5e; text-shadow: 0 8px 28px rgba(34,197,94,0.06); }
-.promo-left .promo-small{ font-size:12px; color: rgba(255,255,255,0.7); margin-left:8px; font-weight:700; }
+.promo-shuffle{ width:36px; height:36px; border-radius:8px; box-shadow: 0 6px 22px rgba(34,197,94,0.06); }
+.promo-left-top{ font-weight:900; font-size:20px; color: #22ff59; text-shadow: 0 6px 24px rgba(34,197,94,0.06); }
+.promo-left .promo-small{ font-size:12px; color: rgba(255,255,255,0.65); margin-left:8px; font-weight:700; }
 
-.promo-right-top{ display:flex; align-items:center; gap:12px; }
+.promo-center{ flex:1; display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
 .promo-actions{ display:flex; gap:14px; align-items:center; }
-.btn-telegram{ display:inline-flex; align-items:center; gap:10px; padding:10px 18px; background: linear-gradient(180deg,#9ee6ff,#4db8ff); border-radius:18px; color:#042024; text-decoration:none; font-weight:800; box-shadow: 0 10px 36px rgba(77,184,255,0.08); }
+.btn-telegram{ display:inline-flex; align-items:center; gap:10px; padding:10px 18px; background: linear-gradient(180deg,#9ee6ff,#4db8ff); border-radius:14px; color:#042024; text-decoration:none; font-weight:800; box-shadow: 0 8px 30px rgba(77,184,255,0.08); }
 .btn-telegram img{ width:18px; height:18px; filter: drop-shadow(0 6px 18px rgba(77,184,255,0.12)); }
-.promo-button{ display:inline-block; padding:12px 26px; background: linear-gradient(90deg,#7ef85a,#a855f7); border-radius:18px; color:#04120a; font-weight:900; text-decoration:none; box-shadow: 0 18px 60px rgba(30,215,96,0.12); }
+.promo-button{ display:inline-block; padding:12px 26px; background: linear-gradient(90deg,#7ef85a,#1ed760); border-radius:14px; color:#04120a; font-weight:900; text-decoration:none; box-shadow: 0 12px 40px rgba(30,215,96,0.12); }
+.promo-sub{ color: rgba(255,255,255,0.6); font-size:14px; text-align:right; }
 
-.promo-bottom{ display:flex; align-items:center; justify-content:space-between; gap:20px; padding-top:12px; border-top: 1px solid rgba(255,255,255,0.02); z-index:2; }
-.promo-sub{ color: rgba(255,255,255,0.75); font-size:15px; }
-
-.promo-code{ display:flex; align-items:center; gap:14px; padding:12px 18px; border-radius:14px; border:2px dashed rgba(34,197,94,0.18); background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.02)); }
-.promo-code .code-caption{ font-size:13px; color: rgba(255,255,255,0.55); font-weight:800; padding-right:6px; }
-.promo-code .code-value{ font-family: 'JetBrains Mono', monospace; font-weight:900; font-size:20px; color: #7ef85a; letter-spacing: 4px; text-shadow: 0 8px 30px rgba(34,197,94,0.08); }
-.promo-copy{ background: linear-gradient(90deg,#b8ffb7,#1ed760); border:none; padding:8px 12px; border-radius:10px; font-weight:900; cursor:pointer; color:#04110a; }
+.promo-right{ min-width:240px; display:flex; justify-content:flex-end; }
+.promo-code{ display:flex; align-items:center; gap:12px; padding:10px 16px; border-radius:12px; border:1px dashed rgba(34,197,94,0.12); background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); }
+.promo-code .code-caption{ font-size:12px; color: rgba(255,255,255,0.5); font-weight:800; }
+.promo-code .code-value{ font-family: 'JetBrains Mono', monospace; font-weight:900; font-size:18px; color: #00ff6a; letter-spacing: 3px; }
+.promo-copy{ background: transparent; border: none; padding:8px 10px; border-radius:8px; font-weight:900; cursor:pointer; color:#06130a; background: linear-gradient(90deg,#b8ffb7,#1ed760); }
 
 @media (max-width:900px){
     .premium-promo{ width: calc(100% - 32px); left: 50%; transform: translateX(-50%); bottom:12px; }
-    .promo-top{ flex-direction:row; }
-    .promo-left{ min-width:120px; }
-    .promo-right-top{ gap:8px; }
-    .promo-bottom{ flex-direction:column; align-items:center; gap:10px; }
+    .promo-left{ min-width:150px; }
+    .promo-right{ min-width:120px; }
+    .promo-center{ align-items:center; text-align:center; }
+    .promo-sub{ text-align:center; }
 }
 
 @media (max-width:520px){
