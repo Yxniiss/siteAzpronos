@@ -120,16 +120,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await res.json();
             
             lastSuccessfulFetch = Date.now();
-            if (document.getElementById('active-players-count')) {
-                document.getElementById('active-players-count').textContent = data.length || 0;
-            }
-
             if (!data || data.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="4" class="center">Aucun joueur ce mois-ci.</td></tr>';
                 return;
             }
 
-            const sorted = [...data].sort((a, b) => (parseFloat(b.weightedWager) || 0) - (parseFloat(a.weightedWager) || 0)).slice(0, 20);
+            const MINIMUM_WAGER = 1000;
+            const sorted = [...data]
+                .filter((player) => (parseFloat(player.weightedWager) || 0) >= MINIMUM_WAGER)
+                .sort((a, b) => (parseFloat(b.weightedWager) || 0) - (parseFloat(a.weightedWager) || 0))
+                .slice(0, 10);
+
+            if (document.getElementById('active-players-count')) {
+                document.getElementById('active-players-count').textContent = sorted.length;
+            }
+
+            if (sorted.length === 0) {
+                podiumContainer.innerHTML = '';
+                tbody.innerHTML = '<tr><td colspan="4" class="center">Aucun joueur éligible ce mois-ci.</td></tr>';
+                return;
+            }
 
             // Update Podium (Top 3)
             const top3 = sorted.slice(0, 3);
@@ -326,7 +336,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const promo = document.getElementById('azzpromo-float');
         if (!promo) return;
 
-        const dismissed = localStorage.getItem('azzpromoDismissed');
+        // Cette clé est réservée au bouton de fermeture. L'ancien état pouvait aussi
+        // être défini par le CTA, ce qui masquait le bandeau au chargement suivant.
+        const dismissStorageKey = 'azzpromoDismissedByClose';
+        const dismissed = localStorage.getItem(dismissStorageKey);
         if (dismissed === '1') {
             promo.style.display = 'none';
             return;
@@ -341,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
             promo.style.opacity = '0';
             promo.style.transform = 'translateY(8px)';
             setTimeout(() => { promo.style.display = 'none'; }, 300);
-            localStorage.setItem('azzpromoDismissed', '1');
+            localStorage.setItem(dismissStorageKey, '1');
         });
 
         const copyBtn = promo.querySelector('.promo-copy');
@@ -357,7 +370,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }).catch(() => { alert('Copie : ' + codeText); });
         });
 
-        const cta = promo.querySelector('.promo-button');
-        if (cta) cta.addEventListener('click', () => { localStorage.setItem('azzpromoDismissed', '1'); });
     })();
 });

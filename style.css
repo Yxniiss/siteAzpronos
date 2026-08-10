@@ -270,9 +270,16 @@ body {
     font-size: 0.8rem;
     color: var(--text-dim);
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
 }
 
 .info-bandeau strong { color: var(--neon-purple); }
+.info-bandeau-cta { display: inline-flex; align-items: center; min-height: 30px; padding: 5px 13px; border-radius: 999px; background: linear-gradient(90deg, var(--neon-purple), var(--neon-green)); color: #fff; font-weight: 900; font-size: 0.72rem; letter-spacing: .06em; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+.info-bandeau-cta:hover { transform: translateY(-1px); box-shadow: 0 5px 16px rgba(168, 85, 247, .3); }
 
 /* --- Floating Code Bar --- */
 .floating-code-bar {
