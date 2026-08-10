@@ -160,16 +160,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (rank === 3) rankDisplay = '🥉';
 
                 let reward = '-';
-                if (rank === 1) reward = '1 500 €';
-                else if (rank >= 2 && rank <= 5) reward = '250 €';
-                else if (rank >= 6 && rank <= 10) reward = '100 €';
+                if (rank === 1) reward = '750 €';
+                else if (rank >= 2 && rank <= 5) reward = '125 €';
+                else if (rank >= 6 && rank <= 10) reward = '50 €';
 
                 return `
                     <tr class="reveal-element">
-                        <td class="rank-cell"><span class="rank-badge r-${rank}">${rankDisplay}</span></td>
-                        <td class="player-name">${p.username}</td>
-                        <td class="align-right"><span class="wager-amount">${formatCurrency(p.weightedWager)}</span></td>
-                        <td class="align-right"><span class="neon-purple-text" style="font-weight: 900;">${reward}</span></td>
+                        <td class="rank-cell" data-label="Rang"><span class="rank-badge r-${rank}">${rankDisplay}</span></td>
+                        <td class="player-name" data-label="Joueur"><span class="player-name-value">${p.username}</span></td>
+                        <td class="align-right wager-cell" data-label="Wager"><span class="wager-amount">${formatCurrency(p.weightedWager)}</span></td>
+                        <td class="align-right reward-cell" data-label="Récompense"><span class="reward-amount">${reward}</span></td>
                     </tr>
                 `;
             }).join('');

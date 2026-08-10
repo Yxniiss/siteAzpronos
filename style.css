@@ -1761,6 +1761,66 @@ nav { display: flex; justify-content: space-between; align-items: center; positi
 .card-x { --card-color: #ffffff; }
 .card-x .s-cta { color: #000; }
 
+/* Community social identity treatments: self-contained, no remote logo assets. */
+.card-discord,
+.card-x {
+    display: flex;
+    min-height: 344px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+.social-card-v2.card-discord .social-mark,
+.social-card-v2.card-x .social-mark {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 24px;
+    line-height: 1;
+    filter: none;
+    position: relative;
+    z-index: 1;
+}
+
+.social-card-v2.card-discord .social-mark {
+    background: linear-gradient(145deg, #7381ff, #4a55d7);
+    border: 1px solid rgba(201, 207, 255, 0.55);
+    box-shadow: 0 13px 30px rgba(88, 101, 242, 0.38), inset 0 1px 0 rgba(255,255,255,0.32);
+}
+
+.social-card-v2 .social-mark img {
+    width: 42px;
+    height: 42px;
+    display: block;
+}
+
+.social-card-v2.card-x .social-mark {
+    background: #f7f8fa;
+    color: #080a0e;
+    border: 1px solid #fff;
+    box-shadow: 0 13px 30px rgba(255,255,255,0.16), inset 0 1px 0 #fff;
+}
+
+.social-card-v2.card-discord:hover .social-mark,
+.social-card-v2.card-x:hover .social-mark {
+    transform: scale(1.06) rotate(-3deg);
+}
+
+.social-card-v2.card-discord:focus-visible,
+.social-card-v2.card-x:focus-visible {
+    outline: 3px solid var(--card-color);
+    outline-offset: 5px;
+}
+
+@media (max-width: 768px) {
+    .card-discord,
+    .card-x { min-height: 300px; }
+}
+
 .card-tiktok { --card-color: #ff0050; }
 .card-insta { --card-color: #E1306C; }
 
@@ -2651,6 +2711,141 @@ p { font-size: clamp(1rem, 2vw, 1.5rem) !important; }
     .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .f-brand p { margin: 20px auto; }
     .f-legal div { justify-content: center; }
+}
+
+/* --- Leaderboard: compact, readable scorecard --- */
+.leaderboard-glass-box {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+    padding: 14px 18px 18px;
+    background: linear-gradient(135deg, rgba(12, 4, 27, 0.98), rgba(0, 0, 0, 0.98));
+}
+
+.premium-table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-spacing: 0 7px;
+}
+
+.leaderboard-col-rank { width: 13%; }
+.leaderboard-col-player { width: 39%; }
+.leaderboard-col-wager { width: 24%; }
+.leaderboard-col-reward { width: 24%; }
+
+.premium-table th {
+    padding: 12px 14px;
+    font-size: clamp(0.65rem, 0.7vw, 0.82rem);
+    letter-spacing: 0.13em;
+    white-space: nowrap;
+}
+
+.premium-table td {
+    padding: 14px;
+    font-size: clamp(0.82rem, 1vw, 1rem);
+    vertical-align: middle;
+}
+
+.premium-table .rank-cell { padding-left: 16px; }
+.premium-table .reward-cell { padding-right: 16px; }
+
+.player-name {
+    min-width: 0;
+    color: var(--text-bright);
+}
+
+.player-name-value {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wager-amount,
+.reward-amount {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.reward-amount {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5.5em;
+    padding: 0.48em 0.62em;
+    border: 1px solid rgba(168, 85, 247, 0.55);
+    border-radius: 0.6em;
+    background: rgba(168, 85, 247, 0.12);
+    color: #e9d5ff;
+    font-weight: 900;
+    box-shadow: inset 0 0 18px rgba(168, 85, 247, 0.08), 0 0 16px rgba(168, 85, 247, 0.12);
+}
+
+@media (max-width: 620px) {
+    .leaderboard-wrapper { margin-top: 26px; margin-bottom: 48px; }
+    .leaderboard-glass-box { padding: 10px; border-radius: 20px; max-height: none; overflow-y: visible; }
+    .premium-table,
+    .premium-table tbody { display: block; }
+    .premium-table colgroup,
+    .premium-table thead { display: none; }
+    .premium-table tr {
+        display: grid;
+        grid-template-columns: minmax(44px, auto) minmax(0, 1fr);
+        grid-template-areas:
+            "rank player"
+            "wager reward";
+        gap: 9px 12px;
+        margin: 0 0 10px;
+        padding: 13px;
+        border: 1px solid rgba(168, 85, 247, 0.17);
+        border-radius: 14px;
+        background: rgba(168, 85, 247, 0.045);
+    }
+    .premium-table td,
+    .premium-table td:first-child,
+    .premium-table td:last-child {
+        display: flex;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        text-align: left;
+    }
+    .premium-table .rank-cell { grid-area: rank; align-items: center; padding-left: 0; }
+    .premium-table .player-name { grid-area: player; align-items: center; font-size: 0.98rem; }
+    .premium-table .wager-cell,
+    .premium-table .reward-cell {
+        flex-direction: column;
+        gap: 3px;
+    }
+    .premium-table .wager-cell { grid-area: wager; }
+    .premium-table .reward-cell { grid-area: reward; align-items: flex-end; padding-right: 0; }
+    .premium-table td[data-label]::before {
+        content: attr(data-label);
+        color: var(--text-muted);
+        font-size: 0.58rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    .premium-table .rank-cell::before,
+    .premium-table .player-name::before { display: none; }
+    .premium-table .wager-amount { font-size: 0.8rem; }
+    .premium-table .reward-amount { min-width: 0; padding: 0.42em 0.55em; font-size: 0.76rem; }
+    .premium-table tr:hover { border-color: var(--neon-purple); background: rgba(168, 85, 247, 0.09); }
+    .premium-table tr:focus-within { outline: 2px solid var(--neon-green); outline-offset: 2px; }
+    .rank-badge { width: 36px; height: 36px; border-radius: 10px; font-size: 0.9rem; }
+}
+
+@media (max-width: 360px) {
+    .premium-table tr { grid-template-columns: 38px minmax(0, 1fr); gap: 8px; padding: 11px; }
+    .premium-table .wager-amount { font-size: 0.72rem; }
+    .premium-table .reward-amount { font-size: 0.68rem; }
+    .rank-badge { width: 32px; height: 32px; }
 }
 
 

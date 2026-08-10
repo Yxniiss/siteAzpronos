@@ -369,13 +369,19 @@
 
                 <div class="leaderboard-wrapper">
                     <div class="leaderboard-glass-box reveal-element neon-border-flow">
-                        <table class="premium-table">
+                        <table class="premium-table" aria-label="Classement mensuel des joueurs">
+                            <colgroup>
+                                <col class="leaderboard-col-rank">
+                                <col class="leaderboard-col-player">
+                                <col class="leaderboard-col-wager">
+                                <col class="leaderboard-col-reward">
+                            </colgroup>
                             <thead>
                                 <tr>
-                                    <th>RANG</th>
-                                    <th>JOUEUR</th>
-                                    <th class="align-right">WAGER</th>
-                                    <th class="align-right">RÉCOMPENSE</th>
+                                    <th scope="col">RANG</th>
+                                    <th scope="col">JOUEUR</th>
+                                    <th scope="col" class="align-right">WAGER</th>
+                                    <th scope="col" class="align-right">RÉCOMPENSE</th>
                                 </tr>
                             </thead>
                             <tbody id="leaderboard-body">
@@ -607,13 +613,13 @@
 
                     <!-- Les autres cartes seront masquées par JS si pas de lien dans le config -->
                     <a href="#" class="social-card-v2 card-discord reveal-element" id="link-discord">
-                        <span class="s-icon"><img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" alt="Discord" style="width: 50px; height: 50px;"></span>
+                        <span class="s-icon social-mark discord-mark" aria-hidden="true"><img src="https://cdn.simpleicons.org/discord/FFFFFF" alt=""></span>
                         <span class="s-name">Discord</span>
                         <span class="s-tag">Communauté VIP & Entraide</span>
                         <span class="s-cta">REJOINDRE DISCORD</span>
                     </a>
                     <a href="#" class="social-card-v2 card-x reveal-element" id="link-x" style="display: none;">
-                        <span class="s-icon">🐦</span>
+                        <span class="s-icon social-mark x-mark" aria-hidden="true"><img src="https://cdn.simpleicons.org/x/000000" alt=""></span>
                         <span class="s-name">Twitter (X)</span>
                         <span class="s-tag">Actualités live & Pronos</span>
                         <span class="s-cta">Suivre</span>
