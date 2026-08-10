@@ -33,9 +33,8 @@
             caption: 'Passe à l’étape suivante quand ton accès Shuffle est confirmé.',
             tasks: [
                 'Ouvre l’App Store (iOS) ou Google Play (Android).',
-                'Recherche l’application "FREE VPN".',
-                'Télécharge et installe l’application "FREE VPN"',
-                'Ouvre l’application et connecte‑toi au serveur en Norvège ou au Canada.',
+                'Recherche Lapplication "FREE VPN".',
+                'Télécharge et installe l’application VPN recommandée.',
                 'Ouvre l’application et connecte‑toi au serveur en Norvège ou au Canada.',
                 'Vérifie que le VPN affiche l’état connecté avant de poursuivre.'
             ],
