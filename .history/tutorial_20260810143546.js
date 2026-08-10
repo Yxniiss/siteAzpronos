@@ -35,10 +35,10 @@
                 'Ouvre l’App Store (iOS) ou Google Play (Android).',
                 'Recherche une application VPN fiable (vérifie les avis).',
                 'Télécharge et installe l’application VPN recommandée.',
-                'Ouvre l’application et connecte‑toi au serveur en Norvège ou au Canada.',
+                'Ouvre l’application et connecte‑toi au serveur en Norvège 🇳🇴 ou au Canada 🇨🇦.',
                 'Vérifie que le VPN affiche l’état connecté avant de poursuivre.'
             ],
-            tip: 'Connecte‑toi à un serveur en Norvège ou au Canada pour de meilleures compatibilités.',
+            tip: 'Connecte‑toi à un serveur en Norvège 🇳🇴 ou au Canada 🇨🇦 pour de meilleures compatibilités.',
             actions: [
                 { type: 'button', label: 'J’AI ACTIVÉ MON VPN →', action: 'next', style: 'tutorial-primary-button' }
             ]
