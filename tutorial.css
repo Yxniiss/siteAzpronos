@@ -149,6 +149,19 @@
 @media (max-width:767px){.tutorial-page{padding-bottom:82px}.tutorial-shell{width:min(100% - 32px,1180px)}.tutorial-header-inner{min-height:62px}.tutorial-header-right{gap:12px}.tutorial-guide-label{display:none}.tutorial-back{font-size:.61rem}.tutorial-hero{padding:54px 0 48px}.tutorial-hero h1{font-size:clamp(2.55rem,12vw,4.3rem)}.tutorial-lede{font-size:1rem}.tutorial-mascot-stage{min-height:225px}.tutorial-mascot{max-height:240px}.tutorial-mascot-bubble{font-size:.83rem;right:4%;top:9%}.tutorial-reward-tape{gap:6px}.tutorial-reward-tape span{font-size:.52rem;padding:7px}.tutorial-benefits,.tutorial-mission{padding:67px 0}.tutorial-section-head{align-items:start}.tutorial-section-head p{writing-mode:initial;transform:none;white-space:nowrap;margin-top:9px}.tutorial-benefit{grid-template-columns:44px 1fr 35px;min-height:82px}.tutorial-benefit b{font-size:1rem}.tutorial-benefit p{font-size:.82rem}.tutorial-device-section{padding:58px 0}.tutorial-progress{margin-inline:-16px}.tutorial-progress button{min-width:103px}.tutorial-step-card{padding:17px}.tutorial-step-layout{grid-template-columns:1fr;padding:28px 0 20px}.tutorial-mockup{min-height:226px;order:-1}.tutorial-step-controls span{display:none}.tutorial-finish{padding:50px 0 78px}.tutorial-finish-inner{padding:28px 22px;gap:25px}.tutorial-finish-actions .tutorial-primary-button,.tutorial-finish-actions .tutorial-telegram-button{flex:1}.tutorial-footer .tutorial-shell{grid-template-columns:1fr;gap:18px}.tutorial-footer .tutorial-responsible{grid-column:auto}.tutorial-floating-code{bottom:10px;width:calc(100% - 20px);min-height:52px}.tutorial-floating-code>span:first-child{font-size:.62rem;gap:6px}.tutorial-floating-code button{padding:0 11px}.tutorial-copy-feedback{font-size:.56rem}}
 @media (max-width:375px){.tutorial-shell{width:calc(100% - 24px)}.tutorial-brand{font-size:1.08rem}.tutorial-back{font-size:.54rem}.tutorial-hero-code strong{font-size:1.44rem}.tutorial-primary-button{width:100%}.tutorial-reward-tape span{font-size:.46rem}.tutorial-benefit{grid-template-columns:36px 1fr 26px}.tutorial-benefit p{font-size:.73rem}.tutorial-device{padding:10px 7px;grid-template-columns:17px 1fr}.tutorial-device b{font-size:.77rem}.tutorial-device small{font-size:.54rem}.tutorial-step-content h3{font-size:2.38rem}.tutorial-step-controls{gap:3px}.tutorial-step-controls button{font-size:.61rem;padding-inline:3px}.tutorial-finish-actions>div{display:grid}.tutorial-finish-actions .tutorial-primary-button,.tutorial-finish-actions .tutorial-telegram-button{width:100%}.tutorial-floating-code{padding-left:10px;gap:7px}.tutorial-floating-code>span:first-child{font-size:.53rem}.tutorial-floating-code button{font-size:.57rem;padding:0 8px}}
 @media (prefers-reduced-motion:reduce){.tutorial-page *{animation-duration:.01ms !important;animation-iteration-count:1 !important;scroll-behavior:auto !important;transition-duration:.01ms !important}}
+
+@media (max-width:480px){
+    .tutorial-hero{padding:38px 0 34px}
+    .tutorial-mascot-stage{min-height:180px}
+    .tutorial-mascot{max-height:190px}
+    .tutorial-mascot-bubble{font-size:.72rem;padding:8px 10px;box-shadow:5px 6px 0 rgba(168,85,247,.48)}
+    .tutorial-reward-tape{flex-wrap:wrap;justify-content:center}
+    .tutorial-reward-tape span{font-size:.5rem}
+    .tutorial-step-media{min-height:220px;padding:14px}
+    .tutorial-step-image{min-height:190px;padding:14px}
+    .tutorial-step-caption{margin-top:12px}
+    .tutorial-task-card .task-body{font-size:.95rem}
+}
 /* Mobile-specific: fixed controls and larger tappable areas */
 @media (max-width:767px) {
     .tutorial-page { padding-bottom: calc(184px + env(safe-area-inset-bottom, 0px)); }

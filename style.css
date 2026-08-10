@@ -544,6 +544,257 @@ nav { display: flex; justify-content: space-between; align-items: center; positi
     animation: blink 1s infinite;
 }
 
+/* Mobile experience pass: preserve the desktop composition while prioritising the
+   offer, code and primary CTA on narrow touch screens. */
+@media (max-width: 600px) {
+    .container { padding-inline: 16px; }
+
+    .info-bandeau { padding: 8px 14px; gap: 8px; font-size: .72rem; line-height: 1.35; }
+    .info-bandeau-cta { min-height: 38px; padding-inline: 14px; }
+
+    .hero-v2 { padding: 44px 0 40px; }
+    .hero-grid { gap: 20px; }
+    .hero-v2 .m-sticker { margin-bottom: 8px !important; }
+    .badge-live { margin-bottom: 14px; padding: 8px 13px; font-size: .72rem; }
+    .official-partnership { margin: 8px 0 14px; padding: 9px 11px; gap: 9px; }
+    .hero-v2 h1 { margin: 8px 0 14px; font-size: clamp(2.3rem, 11vw, 2.9rem) !important; }
+    .hero-v2 p { margin: 0 0 20px; font-size: 1rem !important; line-height: 1.55; }
+    .hero-visual { display: none; }
+    .neon-code-card { margin: 20px auto 0 !important; padding: 20px 16px; border-radius: 20px; }
+    .code-wrapper { gap: 12px; }
+    .code-wrapper .code { font-size: clamp(1.55rem, 8vw, 2rem); letter-spacing: -.04em; }
+    .code-wrapper .btn-neon-green { min-height: 48px; padding: 10px 14px; }
+    .hero-actions { display: none; }
+    .hero-intro-conversion { margin-top: 24px; padding: 24px 18px; border-radius: 24px; }
+    .intro-content { gap: 14px; }
+    .conversion-title { font-size: 1.35rem; line-height: 1.2; }
+    .intro-text { display: none; }
+    .intro-buttons { width: 100%; margin-top: 0 !important; }
+    .intro-buttons .btn-neon-green { width: 100%; min-height: 54px; padding: 14px 18px !important; font-size: .95rem !important; border-radius: 16px !important; }
+    .stats-row { display: none; }
+
+    .promo-box-section,
+    .bonus-section-v2,
+    .leaderboard-section-v2,
+    .rewards-section-v2,
+    .tutorial-v2,
+    .compact-info-section,
+    .community-v2,
+    .final-cta-section { padding: 64px 0 !important; }
+    .section-title { margin-bottom: 34px; }
+    .section-title h2 { margin-top: 10px; }
+    .b-card, .reward-box, .t-step, .social-card-v2, .reward-card-new, .stat-card { padding: 28px 20px; border-radius: 24px; }
+
+    .btn-neon, .btn-neon-green, .btn-glass, .promo-button, .btn-telegram, .promo-copy { min-height: 48px; justify-content: center; }
+    .promo-box-section .btn-neon-green { width: 100%; max-width: 100%; padding: 14px 18px !important; font-size: .95rem !important; }
+    .promo-title-huge { font-size: clamp(2rem, 10vw, 2.6rem) !important; }
+    .promo-subtitle { font-size: 1.55rem !important; margin-bottom: 18px !important; }
+
+    #leaderboard-podium, .leaderboard-mascot { display: none; }
+    .leaderboard-header { margin-bottom: 26px !important; }
+    .leaderboard-header > p { font-size: 1.08rem !important; }
+    .countdown-container { width: 100%; padding: 14px 10px; }
+    .countdown-timer-wrapper { justify-content: space-around; gap: 4px; }
+    .timer-block span { font-size: 1.35rem; }
+    .live-status-pill { max-width: 100%; padding: 10px 13px !important; }
+    #live-indicator-text { font-size: .68rem !important; letter-spacing: .04em !important; }
+    .min-wager-alert { font-size: .7rem !important; line-height: 1.35; }
+    .leaderboard-info-section { margin-top: 36px; }
+    .leaderboard-info-box { padding: 20px 14px !important; }
+
+    .reward-list-container { padding: 20px 14px !important; }
+    .rewards-footer { margin-top: 30px !important; }
+    .social-card-v2 { min-height: 250px !important; }
+    .social-card-v2 .s-icon { margin-bottom: 18px; }
+    .social-card-v2 .s-cta { margin-top: 20px; }
+    .sticker-float { display: none; }
+
+    .premium-promo { width: calc(100% - 20px); bottom: 8px; padding: 4px; }
+    .premium-inner { padding: 10px 12px; gap: 8px; }
+    .promo-top { flex-direction: column; align-items: stretch; gap: 8px; }
+    .promo-left { min-width: 0; justify-content: center; }
+    .promo-right-top, .promo-actions { width: 100%; }
+    .promo-actions { gap: 8px; }
+    .promo-actions > a { flex: 1; min-width: 0; padding: 10px 8px; text-align: center; font-size: .73rem; }
+    .promo-bottom { padding-top: 8px; }
+    .promo-sub { display: none; }
+    .promo-code { width: 100%; justify-content: space-between; gap: 8px; padding: 8px 10px; }
+    .promo-code .code-value { font-size: 1rem; letter-spacing: 2px; }
+    .promo-copy { padding: 7px 10px; font-size: .72rem; }
+    .promo-close { width: 36px; height: 36px; }
+}
+
+/* Compact information section: touch-first phone refinements.
+   Kept last so the inline desktop grid and legacy rules cannot reintroduce
+   a horizontal overflow at narrow widths. */
+@media (max-width: 900px) {
+    .compact-info-section .side-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 40px !important;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .compact-info-section .news-column,
+    .compact-info-section .faq-column,
+    .compact-info-section .news-grid-compact,
+    .compact-info-section .faq-accordion {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .compact-info-section .section-title {
+        margin-bottom: 24px;
+    }
+
+    .compact-info-section .section-title h2 {
+        font-size: clamp(1.9rem, 10vw, 2.45rem) !important;
+        line-height: 1.05;
+        overflow-wrap: anywhere;
+    }
+
+    .news-grid-compact {
+        gap: 12px;
+        margin-top: 20px !important;
+    }
+
+    .news-card-horizontal {
+        align-items: flex-start;
+        gap: 12px;
+        min-height: 76px;
+        padding: 14px 16px 14px 18px;
+        overflow: visible;
+        transform: none;
+    }
+
+    .news-card-horizontal:hover,
+    .news-card-horizontal:focus-visible {
+        transform: none;
+        border-color: var(--neon-purple);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .news-card-horizontal:focus-visible {
+        outline: 3px solid var(--neon-green);
+        outline-offset: 3px;
+    }
+
+    .news-icon-wrapper {
+        width: 44px;
+        height: 44px;
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+
+    .news-title-compact {
+        white-space: normal;
+        overflow: visible;
+        overflow-wrap: anywhere;
+        text-overflow: clip;
+        font-size: 1rem;
+        line-height: 1.35;
+    }
+
+    .news-arrow {
+        align-self: center;
+        margin-left: 0;
+        padding: 8px 0 8px 6px;
+        flex: 0 0 auto;
+    }
+
+    .faq-accordion {
+        gap: 12px;
+        margin-top: 20px !important;
+    }
+
+    .faq-item,
+    .faq-item details {
+        overflow: visible;
+    }
+
+    .faq-item details {
+        padding: 0;
+    }
+
+    .faq-item summary {
+        min-height: 52px;
+        padding: 16px 18px;
+        gap: 12px;
+        align-items: flex-start;
+        font-size: 1rem;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .faq-item summary::after {
+        flex: 0 0 24px;
+        margin-top: -2px;
+        text-align: center;
+    }
+
+    .faq-item p {
+        margin: 0 18px;
+        padding: 16px 0 20px;
+        font-size: .98rem;
+        line-height: 1.55;
+    }
+
+    .community-v2 .section-title h2 {
+        font-size: clamp(2rem, 10vw, 2.7rem) !important;
+        line-height: 1.06;
+        overflow-wrap: anywhere;
+    }
+
+    .community-v2 .section-title p {
+        font-size: 1rem !important;
+        line-height: 1.55;
+    }
+
+    .social-grid-large { gap: 16px; }
+    .social-card-v2 { min-height: 220px !important; }
+
+    .final-cta-section .spectacular-promo {
+        border-radius: 24px !important;
+        padding: 28px 20px !important;
+    }
+
+    .final-cta-section h2 {
+        font-size: clamp(2rem, 10vw, 2.45rem) !important;
+        line-height: 1.08;
+        overflow-wrap: anywhere;
+    }
+
+    .final-cta-section .spectacular-promo p {
+        font-size: 1rem !important;
+        line-height: 1.55;
+        margin-bottom: 24px !important;
+    }
+
+    .final-cta-section .spectacular-promo div[style*="display: flex"] {
+        flex-direction: column;
+        gap: 12px !important;
+    }
+
+    .final-cta-section .spectacular-promo .btn-neon-green,
+    .final-cta-section .spectacular-promo .btn-glass {
+        width: 100%;
+        min-height: 52px;
+        padding: 14px 16px !important;
+        font-size: .95rem !important;
+    }
+
+    footer { padding: 64px 0 36px !important; }
+    .footer-top-grid { gap: 32px !important; margin-bottom: 36px !important; }
+    .footer-top-grid > * { min-width: 0; }
+    .footer-partnership { max-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
 .hero-v2 h1 { 
     font-size: 5rem; line-height: 1.05; margin-bottom: 24px; 
     font-weight: 900;
@@ -2899,4 +3150,68 @@ body, html {
     }
 
     .hero-v2 p { width: 100%; }
+}
+
+/* Final mobile overrides: intentionally last so legacy desktop rules cannot
+   override the mobile hierarchy above. */
+@media (max-width: 600px) {
+    .container { padding-inline: 16px; }
+    .info-bandeau { padding: 8px 14px; gap: 8px; font-size: .72rem; line-height: 1.35; }
+    .info-bandeau-cta { min-height: 38px; padding-inline: 14px; }
+
+    .hero-v2 { padding: 44px 0 40px; }
+    .hero-grid { gap: 20px; }
+    .hero-v2 .m-sticker { margin-bottom: 8px !important; }
+    .badge-live { margin-bottom: 14px; padding: 8px 13px; font-size: .72rem; }
+    .official-partnership { margin: 8px 0 14px; padding: 9px 11px; gap: 9px; }
+    .hero-v2 h1 { margin: 8px 0 14px; font-size: clamp(2.3rem, 11vw, 2.9rem) !important; }
+    .hero-v2 p { margin: 0 0 20px; font-size: 1rem !important; line-height: 1.55; }
+    .hero-visual, .hero-actions, .stats-row { display: none; }
+    .neon-code-card { margin: 20px auto 0 !important; padding: 20px 16px; border-radius: 20px; }
+    .code-wrapper { gap: 12px; }
+    .code-wrapper .code { font-size: clamp(1.55rem, 8vw, 2rem); letter-spacing: -.04em; }
+    .code-wrapper .btn-neon-green { min-height: 48px; padding: 10px 14px; }
+    .hero-intro-conversion { margin-top: 24px; padding: 24px 18px; border-radius: 24px; }
+    .intro-content { gap: 14px; }
+    .conversion-title { font-size: 1.35rem; line-height: 1.2; }
+    .intro-text { display: none; }
+    .intro-buttons { width: 100%; margin-top: 0 !important; }
+    .intro-buttons .btn-neon-green { width: 100%; min-height: 54px; padding: 14px 18px !important; font-size: .95rem !important; border-radius: 16px !important; }
+
+    .promo-box-section, .bonus-section-v2, .leaderboard-section-v2, .rewards-section-v2, .tutorial-v2, .compact-info-section, .community-v2, .final-cta-section { padding: 64px 0 !important; }
+    .section-title { margin-bottom: 34px; }
+    .b-card, .reward-box, .t-step, .social-card-v2, .reward-card-new, .stat-card { padding: 28px 20px; border-radius: 24px; }
+    .btn-neon, .btn-neon-green, .btn-glass, .promo-button, .btn-telegram, .promo-copy { min-height: 48px; justify-content: center; }
+    .promo-box-section .btn-neon-green { width: 100%; padding: 14px 18px !important; font-size: .95rem !important; }
+    .promo-title-huge { font-size: clamp(2rem, 10vw, 2.6rem) !important; }
+    .promo-subtitle { font-size: 1.55rem !important; margin-bottom: 18px !important; }
+
+    #leaderboard-podium, .leaderboard-mascot, .sticker-float { display: none; }
+    .leaderboard-header { margin-bottom: 26px !important; }
+    .leaderboard-header > p { font-size: 1.08rem !important; }
+    .countdown-container { width: 100%; padding: 14px 10px; }
+    .countdown-timer-wrapper { justify-content: space-around; gap: 4px; }
+    .timer-block span { font-size: 1.35rem; }
+    .live-status-pill { max-width: 100%; padding: 10px 13px !important; }
+    #live-indicator-text { font-size: .68rem !important; letter-spacing: .04em !important; }
+    .min-wager-alert { font-size: .7rem !important; line-height: 1.35; }
+    .leaderboard-info-box { padding: 20px 14px !important; }
+    .reward-list-container { padding: 20px 14px !important; }
+    .social-card-v2 { min-height: 250px !important; }
+    .social-card-v2 .s-icon { margin-bottom: 18px; }
+    .social-card-v2 .s-cta { margin-top: 20px; }
+
+    .premium-promo { width: calc(100% - 20px); bottom: 8px; padding: 4px; }
+    .premium-inner { padding: 10px 12px; gap: 8px; }
+    .promo-top { flex-direction: column; align-items: stretch; gap: 8px; }
+    .promo-left { min-width: 0; justify-content: center; }
+    .promo-right-top, .promo-actions { width: 100%; }
+    .promo-actions { gap: 8px; }
+    .promo-actions > a { flex: 1; min-width: 0; padding: 10px 8px; text-align: center; font-size: .73rem; }
+    .promo-bottom { padding-top: 8px; }
+    .promo-sub { display: none; }
+    .promo-code { width: 100%; justify-content: space-between; gap: 8px; padding: 8px 10px; }
+    .promo-code .code-value { font-size: 1rem; letter-spacing: 2px; }
+    .promo-copy { padding: 7px 10px; font-size: .72rem; }
+    .promo-close { width: 36px; height: 36px; }
 }

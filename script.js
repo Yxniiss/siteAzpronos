@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const date = new Date(item.pubDate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
                     
                     return `
-                        <a href="${item.link}" target="_blank" class="news-card-horizontal reveal-element">
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-card-horizontal reveal-element">
                             <div class="news-icon-wrapper">⚽</div>
                             <div class="news-info">
                                 <span class="news-date-pill">${date}</span>
