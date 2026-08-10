@@ -105,13 +105,11 @@
 .tutorial-step-caption { margin:18px 0 0; color:var(--tutorial-muted); font-size:.9rem; line-height:1.5; }
 .tutorial-finish { padding:70px 0 110px; }
 .tutorial-finish-inner { border-radius:32px; padding:44px; display:grid; grid-template-columns:1.1fr .9fr; gap:34px; background:linear-gradient(135deg, rgba(93,33,191,.42), rgba(6,22,11,.78)); border:1px solid rgba(168,85,247,.35); box-shadow:0 0 80px rgba(168,85,247,.15); }
-.tutorial-finish-inner { align-items: center; min-height: 360px; }
 .tutorial-finish h2 { font-size:clamp(2.8rem,4.8vw,5.5rem); margin:0; }
 .tutorial-finish p:not(.tutorial-eyebrow) { color:var(--tutorial-muted); line-height:1.55; max-width:520px; margin-top:18px; }
 .tutorial-finish-highlight { margin:32px 0 0; display:grid; gap:12px; }
 .tutorial-finish-highlight span { display:inline-flex; align-items:center; justify-content:center; padding:16px 22px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid rgba(168,85,247,.18); font:800 .92rem var(--tutorial-mono); letter-spacing:.08em; }
 .tutorial-finish-actions { display:grid; gap:16px; align-content:start; }
-.tutorial-finish-actions { align-self: center; }
 .tutorial-secondary-button { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:52px; padding:14px 20px; border:1px solid rgba(168,85,247,.4); background:rgba(255,255,255,.04); color:#fff; transition:transform .2s ease, background .2s ease; }
 .tutorial-secondary-button:hover { transform:translateY(-2px); background:rgba(255,255,255,.08); }
 .tutorial-start-button { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:62px; padding:16px 30px; border:0; border-radius:999px; background:linear-gradient(120deg, #a855f7, #22c55e); color:#fff; font:800 .9rem var(--tutorial-mono); letter-spacing:.08em; box-shadow:0 0 35px rgba(34,197,94,.28),0 0 35px rgba(168,85,247,.2); animation:tutorialStartPulse 2.8s ease-in-out infinite; transition:transform .2s ease, box-shadow .2s ease; }
@@ -126,33 +124,3 @@
 @media (max-width:767px){.tutorial-page{padding-bottom:82px}.tutorial-shell{width:min(100% - 32px,1180px)}.tutorial-header-inner{min-height:62px}.tutorial-header-right{gap:12px}.tutorial-guide-label{display:none}.tutorial-back{font-size:.61rem}.tutorial-hero{padding:54px 0 48px}.tutorial-hero h1{font-size:clamp(2.55rem,12vw,4.3rem)}.tutorial-lede{font-size:1rem}.tutorial-mascot-stage{min-height:225px}.tutorial-mascot{max-height:240px}.tutorial-mascot-bubble{font-size:.83rem;right:4%;top:9%}.tutorial-reward-tape{gap:6px}.tutorial-reward-tape span{font-size:.52rem;padding:7px}.tutorial-benefits,.tutorial-mission{padding:67px 0}.tutorial-section-head{align-items:start}.tutorial-section-head p{writing-mode:initial;transform:none;white-space:nowrap;margin-top:9px}.tutorial-benefit{grid-template-columns:44px 1fr 35px;min-height:82px}.tutorial-benefit b{font-size:1rem}.tutorial-benefit p{font-size:.82rem}.tutorial-device-section{padding:58px 0}.tutorial-progress{margin-inline:-16px}.tutorial-progress button{min-width:103px}.tutorial-step-card{padding:17px}.tutorial-step-layout{grid-template-columns:1fr;padding:28px 0 20px}.tutorial-mockup{min-height:226px;order:-1}.tutorial-step-controls span{display:none}.tutorial-finish{padding:50px 0 78px}.tutorial-finish-inner{padding:28px 22px;gap:25px}.tutorial-finish-actions .tutorial-primary-button,.tutorial-finish-actions .tutorial-telegram-button{flex:1}.tutorial-footer .tutorial-shell{grid-template-columns:1fr;gap:18px}.tutorial-footer .tutorial-responsible{grid-column:auto}.tutorial-floating-code{bottom:10px;width:calc(100% - 20px);min-height:52px}.tutorial-floating-code>span:first-child{font-size:.62rem;gap:6px}.tutorial-floating-code button{padding:0 11px}.tutorial-copy-feedback{font-size:.56rem}}
 @media (max-width:375px){.tutorial-shell{width:calc(100% - 24px)}.tutorial-brand{font-size:1.08rem}.tutorial-back{font-size:.54rem}.tutorial-hero-code strong{font-size:1.44rem}.tutorial-primary-button{width:100%}.tutorial-reward-tape span{font-size:.46rem}.tutorial-benefit{grid-template-columns:36px 1fr 26px}.tutorial-benefit p{font-size:.73rem}.tutorial-device{padding:10px 7px;grid-template-columns:17px 1fr}.tutorial-device b{font-size:.77rem}.tutorial-device small{font-size:.54rem}.tutorial-step-content h3{font-size:2.38rem}.tutorial-step-controls{gap:3px}.tutorial-step-controls button{font-size:.61rem;padding-inline:3px}.tutorial-finish-actions>div{display:grid}.tutorial-finish-actions .tutorial-primary-button,.tutorial-finish-actions .tutorial-telegram-button{width:100%}.tutorial-floating-code{padding-left:10px;gap:7px}.tutorial-floating-code>span:first-child{font-size:.53rem}.tutorial-floating-code button{font-size:.57rem;padding:0 8px}}
 @media (prefers-reduced-motion:reduce){.tutorial-page *{animation-duration:.01ms !important;animation-iteration-count:1 !important;scroll-behavior:auto !important;transition-duration:.01ms !important}}
-/* Mobile-specific: fixed controls and larger tappable areas */
-@media (max-width:767px) {
-    .tutorial-page { padding-bottom: 160px; }
-    .tutorial-step-controls {
-        position: fixed;
-        bottom: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 32px);
-        max-width: 720px;
-        padding: 10px 12px;
-        border-radius: 999px;
-        background: linear-gradient(180deg, rgba(6,6,10,0.95), rgba(18,12,25,0.85));
-        box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-        z-index: 9999;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-    }
-    .tutorial-step-controls span { display: none; }
-    .tutorial-step-controls button { min-width: 0; flex: 1; padding: 14px; border-radius: 999px; font-weight:900; }
-
-    .tutorial-task-list { gap: 10px; }
-    .tutorial-task-card { padding: 16px; border-radius: 14px; }
-    .tutorial-task-card .task-number { min-width:48px; height:48px; font-size:0.95rem; border-radius:10px; }
-    .tutorial-task-card .task-body { font-size:1.05rem; }
-
-    .tutorial-step-actions { flex-direction: column; }
-    .tutorial-step-actions .tutorial-primary-button, .tutorial-step-actions .tutorial-secondary-button { width:100%; }
-}

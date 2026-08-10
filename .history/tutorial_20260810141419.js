@@ -195,28 +195,6 @@
             img.alt = step.imageLabel || 'Illustration de l’étape';
         }
         stepCaption.textContent = step.caption;
-        // render tasks (numbered action cards)
-        const tasksContainer = document.querySelector('.tutorial-step-tasks');
-        const tipContainer = document.querySelector('.tutorial-step-tip');
-        tasksContainer.innerHTML = '';
-        tipContainer.innerHTML = '';
-        if (Array.isArray(step.tasks) && step.tasks.length) {
-            const list = document.createElement('div');
-            list.className = 'tutorial-task-list';
-            step.tasks.forEach((t, i) => {
-                const card = document.createElement('div');
-                card.className = 'tutorial-task-card';
-                card.innerHTML = `<div class="task-number">${String(i+1).padStart(2,'0')}</div><div class="task-body">${t}</div>`;
-                list.appendChild(card);
-            });
-            tasksContainer.appendChild(list);
-        }
-        if (step.tip) {
-            const tip = document.createElement('div');
-            tip.className = 'tutorial-tip-box';
-            tip.innerHTML = `<strong>💡 À retenir</strong><p>${step.tip}</p>`;
-            tipContainer.appendChild(tip);
-        }
         stepStatus.textContent = activeStep === stepCount - 1 ? 'DERNIÈRE ÉTAPE' : 'EN COURS';
         prevButton.disabled = activeStep === 0;
         nextButton.innerHTML = activeStep === stepCount - 1 ? 'TERMINER <b>→</b>' : 'SUIVANT <b>→</b>';
