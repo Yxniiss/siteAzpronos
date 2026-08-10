@@ -2,7 +2,7 @@
     'use strict';
 
     const code = 'AZZPRONOS';
-    const config = { affiliateLink: '#', telegramLink: '#', discordLink: '#', xLink: '#' };
+    const config = { affiliateLink: '#', telegramLink: '#', telegramBotLink: '#', discordLink: '#', xLink: '#' };
     const startSection = document.querySelector('.tutorial-hero');
     const flowSection = document.querySelector('.tutorial-flow');
     const finishSection = document.querySelector('.tutorial-finish');
@@ -128,7 +128,7 @@
             text: 'Utilise ton compte avec le code AZZPRONOS et commence à faire monter ton wager pour grimper dans le classement.',
             imageLabel: 'Top 10 / classement',
             imageSrc: 'assets/tutorial-step-6-ranking.png',
-            caption: 'Le Top 10 partage 3 000 € chaque mois entre les meilleurs joueurs.',
+            caption: 'Le Top 10 partage 1 500 € chaque mois entre les meilleurs joueurs.',
             tasks: [
                 'Consulte la page « Classement » pour connaître les règles et seuils.',
                 'Prends connaissance du wager requis pour être éligible aux récompenses.',
@@ -309,12 +309,13 @@
             .then((response) => (response.ok ? response.json() : Promise.reject(new Error('Configuration indisponible'))))
             .then((data) => {
                 config.affiliateLink = data.affiliateLink || config.affiliateLink;
-                config.telegramLink = data.telegramLink || config.telegramLink;
+                config.telegramLink = data.telegramChannelLink || data.telegramLink || config.telegramLink;
+                config.telegramBotLink = data.telegramBotLink || config.telegramBotLink;
                 config.discordLink = data.discordLink || config.discordLink;
                 config.xLink = data.xLink || config.xLink;
                 document.querySelectorAll('[data-link-key]').forEach((link) => {
                     const key = link.dataset.linkKey;
-                    link.href = config[key] || '#';
+                    link.href = key === 'telegramLink' ? config.telegramBotLink : (config[key] || '#');
                 });
                 document.querySelectorAll('.aff-link').forEach((link) => { link.href = config.affiliateLink; });
                 document.querySelectorAll('.telegram-link').forEach((link) => { link.href = config.telegramLink; });

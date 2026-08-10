@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             const data = await res.json();
             document.querySelectorAll('.aff-link').forEach(l => l.href = data.affiliateLink);
-            document.querySelectorAll('.telegram-link').forEach(l => l.href = data.telegramLink);
+            document.querySelectorAll('.telegram-link').forEach(l => l.href = data.telegramChannelLink);
             
             // Gestion dynamique des réseaux sociaux optionnels
             const discordCard = document.getElementById('link-discord');
@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 xCard.href = data.xLink;
                 xCard.style.display = 'flex';
             }
+            document.querySelectorAll('.x-link').forEach(l => l.href = data.xLink || '#');
         } catch (err) { console.error('Config error:', err); }
     }
 

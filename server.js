@@ -164,8 +164,9 @@ app.get('/api/stats', async (req, res) => {
 app.get('/api/config', (req, res) => {
     console.log('GET /api/config');
     res.json({
-        affiliateLink: process.env.AFFILIATE_LINK || '#',
-        telegramLink: process.env.TELEGRAM_LINK || '#',
+        affiliateLink: process.env.SHUFFLE_AFFILIATE_LINK || process.env.AFFILIATE_LINK || '#',
+        telegramChannelLink: process.env.TELEGRAM_CHANNEL_LINK || process.env.TELEGRAM_LINK || '#',
+        telegramBotLink: process.env.TELEGRAM_BOT_LINK || '#',
         discordLink: process.env.DISCORD_LINK || null,
         xLink: process.env.X_LINK || null
     });
