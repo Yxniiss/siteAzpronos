@@ -4,7 +4,7 @@
     const code = 'AZZPRONOS';
 
     // URLs des deux actions de fin : renseigne-les ici lorsqu'elles seront disponibles.
-    const TELEGRAM_BOT_URL = '';
+    const TELEGRAM_BOT_URL = 'https://t.me/AzzBonusShuffleBot';
     const AZZINFOS_URL = 'https://t.me/azzinfos';
     const config = { affiliateLink: '#', telegramLink: '#', telegramBotLink: TELEGRAM_BOT_URL, discordLink: '#', xLink: '#', azzinfosUrl: AZZINFOS_URL };
     const startSection = document.querySelector('.tutorial-hero');
