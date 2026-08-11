@@ -125,11 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const MINIMUM_WAGER = 1000;
             const sorted = [...data]
-                .filter((player) => (parseFloat(player.weightedWager) || 0) >= MINIMUM_WAGER)
-                .sort((a, b) => (parseFloat(b.weightedWager) || 0) - (parseFloat(a.weightedWager) || 0))
-                .slice(0, 10);
+                .filter((player) => (parseFloat(player.weightedWager) || 0) > 0)
+                .sort((a, b) => (parseFloat(b.weightedWager) || 0) - (parseFloat(a.weightedWager) || 0));
 
             if (document.getElementById('active-players-count')) {
                 document.getElementById('active-players-count').textContent = sorted.length;
@@ -175,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if (rank >= 6 && rank <= 10) reward = '50 €';
 
                 return `
-                    <tr class="reveal-element">
+                    <tr>
                         <td class="rank-cell" data-label="Rang"><span class="rank-badge r-${rank}">${rankDisplay}</span></td>
                         <td class="player-name" data-label="Joueur"><span class="player-name-value">${p.username}</span></td>
                         <td class="align-right wager-cell" data-label="Wager"><span class="wager-amount">${formatCurrency(p.weightedWager)}</span></td>
