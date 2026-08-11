@@ -1600,6 +1600,18 @@ nav { display: flex; justify-content: space-between; align-items: center; positi
 .btn-telegram img{ width:18px; height:18px; filter: drop-shadow(0 6px 18px rgba(77,184,255,0.12)); }
 .promo-button{ display:inline-block; padding:12px 26px; background: linear-gradient(90deg,#7ef85a,#a855f7); border-radius:18px; color:#04120a; font-weight:900; text-decoration:none; box-shadow: 0 18px 60px rgba(30,215,96,0.12); }
 
+.promo-simple{
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+}
+.promo-simple p{
+    margin:0;
+    color:rgba(255,255,255,.82);
+    font-weight:700;
+}
+
 .promo-bottom{ display:flex; align-items:center; justify-content:space-between; gap:20px; padding-top:12px; border-top: 1px solid rgba(255,255,255,0.02); z-index:2; }
 .promo-sub{ color: rgba(255,255,255,0.75); font-size:15px; }
 
@@ -1623,6 +1635,7 @@ nav { display: flex; justify-content: space-between; align-items: center; positi
     .right-block{ justify-content:flex-start; }
     .promo-cta{ width:100%; text-align:center; }
     .azzpromo-inner{ padding:12px; }
+    .promo-simple{ flex-direction:column; gap:10px; text-align:center; }
 }
 
 .news-badge {
