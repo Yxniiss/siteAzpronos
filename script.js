@@ -335,44 +335,4 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchLeaderboard();
     }, 60000);
 
-    // AZZPRONOS floating promo behavior
-    (function initAzzPromo(){
-        const promo = document.getElementById('azzpromo-float');
-        if (!promo) return;
-
-        // Cette clé est réservée au bouton de fermeture. L'ancien état pouvait aussi
-        // être défini par le CTA, ce qui masquait le bandeau au chargement suivant.
-        const dismissStorageKey = 'azzpromoDismissedByClose';
-        const dismissed = localStorage.getItem(dismissStorageKey);
-        if (dismissed === '1') {
-            promo.style.display = 'none';
-            return;
-        }
-
-        // show with small delay for UX
-        setTimeout(() => { promo.classList.add('visible'); promo.style.opacity = '1'; }, 1200);
-
-        const closeBtn = promo.querySelector('.promo-close');
-        if (closeBtn) closeBtn.addEventListener('click', () => {
-            promo.style.transition = 'opacity .28s ease, transform .28s ease';
-            promo.style.opacity = '0';
-            promo.style.transform = 'translateY(8px)';
-            setTimeout(() => { promo.style.display = 'none'; }, 300);
-            localStorage.setItem(dismissStorageKey, '1');
-        });
-
-        const copyBtn = promo.querySelector('.promo-copy');
-        if (copyBtn) copyBtn.addEventListener('click', (e) => {
-            const codeEl = promo.querySelector('.code-value');
-            const codeText = (codeEl && codeEl.textContent) ? codeEl.textContent.trim() : (CONFIG.bonusCode || 'AZZPRONOS');
-            navigator.clipboard.writeText(codeText).then(() => {
-                const btn = e.currentTarget;
-                const old = btn.textContent;
-                btn.textContent = '✓ COPIÉ !';
-                btn.classList.add('copied');
-                setTimeout(() => { btn.textContent = old; btn.classList.remove('copied'); }, 2000);
-            }).catch(() => { alert('Copie : ' + codeText); });
-        });
-
-    })();
 });

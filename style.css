@@ -1457,7 +1457,7 @@ nav { display: flex; justify-content: space-between; align-items: center; positi
     position: relative;
 }
 
-/* AZZPRONOS compact floating promo block */
+/* Tutoriel button styling */
 .nav-tuto {
     display: inline-block;
     background: linear-gradient(90deg,#22c55e,#a855f7);
@@ -3172,18 +3172,20 @@ body, html {
     .info-bandeau { padding: 8px 14px; gap: 8px; font-size: .72rem; line-height: 1.35; }
     .info-bandeau-cta { min-height: 38px; padding-inline: 14px; }
 
-    .hero-v2 { padding: 44px 0 40px; }
+    .hero-v2 { padding: 28px 0 40px; }
     .hero-grid { gap: 20px; }
     .hero-v2 .m-sticker { margin-bottom: 8px !important; }
     .badge-live { margin-bottom: 14px; padding: 8px 13px; font-size: .72rem; }
-    .official-partnership { margin: 8px 0 14px; padding: 9px 11px; gap: 9px; }
-    .hero-v2 h1 { margin: 8px 0 14px; font-size: clamp(2.3rem, 11vw, 2.9rem) !important; }
-    .hero-v2 p { margin: 0 0 20px; font-size: 1rem !important; line-height: 1.55; }
-    .hero-visual, .hero-actions, .stats-row { display: none; }
-    .neon-code-card { margin: 20px auto 0 !important; padding: 20px 16px; border-radius: 20px; }
+    .official-partnership { margin: 0 0 14px; padding: 9px 11px; gap: 9px; }
+    .hero-v2 h1 { margin: 0 0 12px; font-size: clamp(2.2rem, 10.8vw, 2.8rem) !important; }
+    .hero-v2 p { margin: 0 0 16px; font-size: 1rem !important; line-height: 1.5; }
+    .hero-visual, .stats-row { display: none; }
+    .neon-code-card { margin: 16px auto 0 !important; padding: 18px 16px; border-radius: 20px; }
     .code-wrapper { gap: 12px; }
     .code-wrapper .code { font-size: clamp(1.55rem, 8vw, 2rem); letter-spacing: -.04em; }
     .code-wrapper .btn-neon-green { min-height: 48px; padding: 10px 14px; }
+    .hero-actions { display: flex; width: 100%; margin: 16px 0 0 !important; gap: 10px; }
+    .hero-actions .btn-glass { flex: 1; padding: 11px 10px; font-size: .72rem; }
     .hero-intro-conversion { margin-top: 24px; padding: 24px 18px; border-radius: 24px; }
     .intro-content { gap: 14px; }
     .conversion-title { font-size: 1.35rem; line-height: 1.2; }
@@ -3227,4 +3229,134 @@ body, html {
     .promo-code .code-value { font-size: 1rem; letter-spacing: 2px; }
     .promo-copy { padding: 7px 10px; font-size: .72rem; }
     .promo-close { width: 36px; height: 36px; }
+}
+
+/* Reordered hero: the offer now completes the conversion sequence. */
+.hero-offer-card {
+    width: min(100%, 500px);
+    margin-top: 28px;
+    padding: 26px 28px;
+    border: 1px solid var(--glass-border-green);
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(15, 2, 35, 0.92) 48%, rgba(168, 85, 247, 0.2));
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.12), inset 0 1px rgba(255, 255, 255, 0.08);
+}
+.offer-kicker { color: var(--neon-green); font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 900; letter-spacing: .13em; }
+.offer-value { margin: 4px 0; color: #fff; font-size: clamp(2.7rem, 5vw, 4rem); font-weight: 900; line-height: 1; text-shadow: 0 0 20px var(--neon-green-glow); }
+.hero-offer-card p { margin: 0 0 18px; font-size: 1rem !important; }
+.hero-offer-card .btn-neon-green { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; padding: 12px 22px; border-radius: 14px; text-decoration: none; color: #07150a; font-weight: 900; }
+
+@media (max-width: 1024px) {
+    .desktop-only-socials { display: flex; margin-left: auto; }
+    .mobile-menu-toggle { order: 3; margin-left: 4px; }
+}
+
+@media (max-width: 600px) {
+    header { padding: 12px 0; }
+    .desktop-only-socials { gap: 8px; }
+    .desktop-only-socials .social-icon.x-link { display: none; }
+    .hero-offer-card { margin-top: 18px; padding: 22px 18px; text-align: left; }
+    .hero-offer-card .btn-neon-green { width: 100%; }
+}
+
+/* Keep the AZZPRONOS mascot in the first mobile viewport without making the
+   conversion sequence (copy, code and offer) taller. */
+@media (max-width: 768px) {
+    .hero-grid {
+        position: relative;
+        display: block;
+    }
+
+    .hero-text-content {
+        display: block;
+        text-align: left;
+    }
+
+    .hero-visual {
+        display: block;
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        width: clamp(118px, 32vw, 180px);
+        height: 158px;
+        margin: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .hero-text-content { position: relative; z-index: 1; }
+    .official-partnership { margin-right: 112px; }
+    .hero-v2 h1 { padding-right: 102px; }
+
+    .mascot-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .mascot-halo { width: 115%; height: 115%; }
+
+    .hero-mascot-img {
+        width: 100%;
+        max-height: 158px;
+        object-fit: contain;
+        object-position: right top;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-visual { width: 118px; height: 142px; right: -12px; }
+    .hero-mascot-img { max-height: 142px; }
+    .official-partnership { margin-right: 92px; }
+    .hero-v2 h1 { padding-right: 88px; }
+}
+
+/* Final hero override: keep IMG_6352 visible immediately on entry, even on
+   narrow screens where earlier rules hide the visual block. */
+@media (max-width: 768px) {
+    .hero-v2 {
+        padding-top: 24px;
+    }
+
+    .hero-grid {
+        display: flex !important;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .hero-visual {
+        display: block !important;
+        position: static !important;
+        order: -1;
+        width: min(220px, 58vw);
+        height: auto;
+        margin: 0 auto 8px;
+        overflow: visible;
+        pointer-events: none;
+    }
+
+    .hero-text-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-mascot-img {
+        width: 100%;
+        max-height: none;
+        object-fit: contain;
+        object-position: center top;
+    }
+
+    .official-partnership,
+    .hero-v2 h1 {
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .hero-description {
+        max-width: 44rem;
+    }
 }
